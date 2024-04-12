@@ -1,13 +1,30 @@
-use_frameworks!
+platform :ios, '12.0'
+inhibit_all_warnings!
+use_frameworks! :linkage => :static
 
-platform :ios, '10.0'
+source 'https://gitlab.mitek.vn/mobile-app/mifone-sdk/core-podspec.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+#use_frameworks!
+
+target 'VoipLibIOS' do
+  pod 'Swinject'
+  pod 'linphone-sdk-novideo', '5.2.112'
+end
 
 target 'VoipLibIOS_Example' do
   pod 'VoipLibIOS', :path => '../'
+  pod 'SAMKeychain'
+  pod 'QuickTableViewController'
+  pod 'Alamofire', '~> 5.2'
+end
 
-  target 'VoipLibIOS_Tests' do
-    inherit! :search_paths
-
-    
-  end
+post_install do |installer|
+    installer.generated_projects.each do |project|
+          project.targets.each do |target|
+              target.build_configurations.each do |config|
+                  config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+               end
+          end
+   end
 end

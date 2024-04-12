@@ -1,0 +1,6 @@
+framework module VoipLibIOS {
+  umbrella header "VoipLibIOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
