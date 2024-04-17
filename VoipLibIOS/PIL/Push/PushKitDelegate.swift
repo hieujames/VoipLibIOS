@@ -3,7 +3,7 @@ import PushKit
 
 class PushKitDelegate: NSObject {
 
-    let pil = di.resolve(PIL.self)!
+    let pil = di.resolve(MFLib.self)!
     let middleware: Middleware
     let voipRegistry: PKPushRegistry
 

@@ -4,11 +4,11 @@ import CallKit
 // Listens to PIL events and performs the necessary actions in the Callkit.
 class PlatformIntegrator: PILEventDelegate {
     
-    private let pil: PIL
+    private let pil: MFLib
     private let missedCallNotification: MissedCallNotification
     private let callFactory: PILCallFactory
     
-    init(pil: PIL, missedCallNotification: MissedCallNotification, callFactory: PILCallFactory) {
+    init(pil: MFLib, missedCallNotification: MissedCallNotification, callFactory: PILCallFactory) {
         self.pil = pil
         self.missedCallNotification = missedCallNotification
         self.callFactory = callFactory

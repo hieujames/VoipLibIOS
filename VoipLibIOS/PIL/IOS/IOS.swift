@@ -4,9 +4,9 @@ import UIKit
 
 public class IOS {
     
-    private let pil: PIL
+    private let pil: MFLib
     
-    init(pil: PIL) {
+    init(pil: MFLib) {
         self.pil = pil
     }
     

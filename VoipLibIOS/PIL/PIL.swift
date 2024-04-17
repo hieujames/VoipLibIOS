@@ -2,7 +2,7 @@ import Foundation
 import CallKit
 
 @available(iOS 11.0, *)
-public class PIL {
+public class MFLib {
 
     let app: ApplicationSetup
     
@@ -34,7 +34,7 @@ public class PIL {
         }
     }
     
-    static public var shared: PIL?
+    static public var shared: MFLib?
     
     /// The user preferences for the PIL, when this value is updated it will trigger
     /// a full PIL restart and re-register.
@@ -51,7 +51,7 @@ public class PIL {
     
     init(applicationSetup: ApplicationSetup) {
         self.app = applicationSetup
-        PIL.shared = self
+        MFLib.shared = self
         events.listen(delegate: platformIntegrator)
         self.iOS.startListeningForSystemNotifications()
         voipLib.initialize(
@@ -141,7 +141,7 @@ public class PIL {
 }
 
 internal func log(_ message: String, level: LogLevel = .info) {
-    if let pil = PIL.shared {
+    if let pil = MFLib.shared {
         pil.writeLog(message, level: level)
     }
 }

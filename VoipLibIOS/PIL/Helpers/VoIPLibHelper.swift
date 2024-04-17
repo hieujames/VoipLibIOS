@@ -2,9 +2,9 @@ import Foundation
 
 class VoIPLibHelper {
     private let voipLib: LibModule
-    private let pil: PIL
+    private let pil: MFLib
     
-    init(voipLib: LibModule, pil: PIL) {
+    init(voipLib: LibModule, pil: MFLib) {
         self.voipLib = voipLib
         self.pil = pil
     }

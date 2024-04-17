@@ -9,8 +9,8 @@ final class SettingsViewController: QuickTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let useApplicationRingtone = PIL.shared != nil ? PIL.shared!.preferences.useApplicationRingtone : false
-        let includesCallsInRecents = PIL.shared != nil ? PIL.shared!.preferences.includesCallsInRecents : false
+        let useApplicationRingtone = MFLib.shared != nil ? MFLib.shared!.preferences.useApplicationRingtone : false
+        let includesCallsInRecents = MFLib.shared != nil ? MFLib.shared!.preferences.includesCallsInRecents : false
         
         tableContents = [
 
@@ -22,7 +22,7 @@ final class SettingsViewController: QuickTableViewController {
                 NavigationRow(text: "Proxy", detailText: .subtitle(userDefault(key: "proxy")), action: { [weak self] in self?.promptUserWithTextField(row: $0, title: "Proxy", key: "proxy") }),
                 NavigationRow(text: "Transport", detailText: .subtitle(userDefault(key: "transport")), action: { [weak self] in self?.promptUserWithTextField(row: $0, title: "Transport", key: "transport") }),
                 TapActionRow(text: "Authentication", action: { row in
-                    let pil = PIL.shared!
+                    let pil = MFLib.shared!
                     pil.auth = Auth(
                         username: self.userDefault(key: "username"),
                         password: self.userDefault(key: "password"),
@@ -56,14 +56,14 @@ final class SettingsViewController: QuickTableViewController {
             Section(title: "Preferences", rows: [
                 SwitchRow(text: "Use Application Ringtone", switchValue: useApplicationRingtone, action: { row in
                     if let switchRow = row as? SwitchRowCompatible {
-                        if let pil = PIL.shared {
+                        if let pil = MFLib.shared {
                             pil.preferences = Preferences.init(useApplicationRingtone: switchRow.switchValue, includesCallsInRecents: includesCallsInRecents)
                         }
                     }
                 }),
                 SwitchRow(text: "Show calls in native recents", switchValue: includesCallsInRecents, action: { row in
                     if let switchRow = row as? SwitchRowCompatible {
-                        if let pil = PIL.shared {
+                        if let pil = MFLib.shared {
                             pil.preferences = Preferences.init(useApplicationRingtone: useApplicationRingtone, includesCallsInRecents: switchRow.switchValue)
                         }
                     }

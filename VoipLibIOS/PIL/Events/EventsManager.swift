@@ -2,12 +2,12 @@ import Foundation
 
 public class EventsManager {
     
-    private let pil: PIL
+    private let mf: MFLib
     private let calls: Calls
     private var listeners = [ObjectIdentifier : EventListener]()
     
-    init(pil: PIL, calls: Calls) {
-        self.pil = pil
+    init(mf: MFLib, calls: Calls) {
+        self.mf = mf
         self.calls = calls
     }
     
@@ -22,7 +22,7 @@ public class EventsManager {
     }
     
     internal func broadcast(event: Event) {
-        if !pil.isStarted {
+        if !mf.isStarted {
             return
         }
         

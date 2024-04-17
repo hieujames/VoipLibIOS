@@ -28,8 +28,8 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
      */
     private var lastRegisteredCredentials: Auth? = nil
     
-    var pil: PIL {
-        return PIL.shared!
+    var pil: MFLib {
+        return MFLib.shared!
     }
     
     init() {

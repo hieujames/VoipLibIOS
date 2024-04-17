@@ -4,10 +4,10 @@ import CallKit
 public class CallActions {
     
     private let controller: CXCallController
-    private let pil: PIL
+    private let pil: MFLib
     private let voipLib: LibModule
     
-    init(controller: CXCallController, pil: PIL, voipLib: LibModule) {
+    init(controller: CXCallController, pil: MFLib, voipLib: LibModule) {
         self.controller = controller
         self.pil = pil
         self.voipLib = voipLib

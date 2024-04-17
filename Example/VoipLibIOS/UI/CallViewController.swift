@@ -18,7 +18,7 @@ class CallViewController: UIViewController, PILEventDelegate {
     @IBOutlet weak var transferButton: UIButton!
     @IBOutlet weak var bluetoothSingleDeviceButton: UIButton!
     
-    let pil = PIL.shared!
+    let pil = MFLib.shared!
     
     private var event: Event?
     private var callSessionState: CallSessionState?

@@ -3,9 +3,9 @@ import CallKit
 
 class VoipLibEventTranslator: VoIPLibCallDelegate {
     
-    private let pil: PIL
+    private let pil: MFLib
     
-    init(pil: PIL) {
+    init(pil: MFLib) {
         self.pil = pil
     }
     

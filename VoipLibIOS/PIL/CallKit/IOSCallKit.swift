@@ -9,10 +9,10 @@ class IOSCallKit: NSObject {
     public var provider: CXProvider
     public let controller = CXCallController()
     private let notifications = NotificationCenter.default
-    private let pil: PIL
+    private let pil: MFLib
     private let voipLib: LibModule
         
-    init(pil: PIL, voipLib: LibModule) {
+    init(pil: MFLib, voipLib: LibModule) {
         self.pil = pil
         self.voipLib = voipLib
         self.provider = CXProvider(configuration: IOSCallKit.self.createConfiguration())
@@ -44,7 +44,7 @@ class IOSCallKit: NSObject {
         providerConfiguration.supportedHandleTypes = [CXHandle.HandleType.phoneNumber]
         providerConfiguration.includesCallsInRecents = false
         
-        if let pil = PIL.shared {
+        if let pil = MFLib.shared {
             providerConfiguration.includesCallsInRecents = pil.preferences.includesCallsInRecents
             
             if pil.preferences.useApplicationRingtone {

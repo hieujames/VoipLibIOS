@@ -25,7 +25,7 @@ class DialerViewController: UIViewController {
 
     @IBAction func callButtonWasPressed(_ sender: UIButton) {
         guard let number = numberPreview.text,
-              let pil = PIL.shared else { return }
+              let pil = MFLib.shared else { return }
         
         pil.preferences = Preferences(
             useApplicationRingtone: pil.preferences.useApplicationRingtone,

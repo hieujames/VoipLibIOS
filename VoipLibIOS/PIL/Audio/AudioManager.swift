@@ -8,7 +8,7 @@ public class AudioManager {
     
     private let voipLib: LibModule
     private let audioSession: AVAudioSession
-    private let pil: PIL
+    private let pil: MFLib
     private let callActions: CallActions
     
     private var linphoneAudio: LinphoneAudio {
@@ -30,7 +30,7 @@ public class AudioManager {
         return routePickerView
     }()
     
-    init(pil: PIL, voipLib: LibModule, audioSession: AVAudioSession, callActions: CallActions) {
+    init(pil: MFLib, voipLib: LibModule, audioSession: AVAudioSession, callActions: CallActions) {
         self.pil = pil
         self.voipLib = voipLib
         self.audioSession = audioSession
