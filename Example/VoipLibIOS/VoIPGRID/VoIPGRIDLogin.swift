@@ -20,11 +20,20 @@ class VoIPGRIDLogin {
             
             switch response.result {
                 case .success(let value):
-                    guard let json = value as? Dictionary<String, String> else {
+                   print("[RESULT]  \(value)")
+                if let json = value as? [String: Any] {
+                    print("[RESULT] 2 \(json)")
+                    
+                    if let data = json["data"] as? String {
+                        completion(data)
+                    } else {
+                        print("Không tìm thấy trường 'data' hoặc kiểu dữ liệu không đúng")
                         completion(nil)
-                        return
                     }
-                    completion(json["api_token"]!)
+                } else {
+                    print("Phản hồi không phải là JSON Dictionary")
+                    completion(nil)
+                }
                 case .failure(let error):
                     print(error)
                     completion(nil)

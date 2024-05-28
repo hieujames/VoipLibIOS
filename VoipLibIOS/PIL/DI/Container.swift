@@ -23,7 +23,7 @@ var register: (Container) -> Container = {
     
     $0.register(EventsManager.self) { c in
         EventsManager(
-            pil: c.resolve(MFLib.self)!,
+            mf: c.resolve(MFLib.self)!,
             calls: c.resolve(Calls.self)!
         )
     }.inObjectScope(.container)

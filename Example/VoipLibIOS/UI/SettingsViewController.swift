@@ -48,8 +48,56 @@ final class SettingsViewController: QuickTableViewController {
                 
                 NavigationRow(text: "VoIPGRID Token", detailText: .subtitle(userDefault(key: "voipgrid_api_token")), action: nil),
                 NavigationRow(text: "Push Kit Token", detailText: .subtitle(userDefault(key: "push_kit_token")), action: nil),
-                //NavigationRow(text: "Middleware", detailText: .subtitle(defaults.bool(forKey: "middleware_is_registered") ? "Registered" : "Not Registered"), action: nil),
-                TapActionRow(text: "Register with Account", action: { _ in SettingsViewController.registerMiddleware { success in self.viewDidLoad() } }),
+                TapActionRow(text: "Register with Account", action: { row in
+                    let voipgridLogin = VoIPGRIDLogin()
+                    voipgridLogin.login { apiToken in
+                        print("[API_TOKEN]  \(apiToken)")
+                        if let pil = MFLib.shared {
+                            if let tripleEncodedToken = pil.decodeTokenThreeTimes(apiToken!) {
+                                print("[RETURN] Token đã mã hóa 3 lần: \(tripleEncodedToken)")
+                                
+                                let slicedStrings = pil.sliceStringWithKeyVoid(tripleEncodedToken, key: "b6aed9ab7cdf85432c321757b4d48153")
+                                print("[RETURN] Chuỗi đã cắt: \(slicedStrings)")
+                                
+                                var decodedParts: [String] = []
+                                for part in slicedStrings {
+                                    if let decodedPart = pil.base64Decode(part) {
+                                        decodedParts.append(decodedPart)
+                                    } else {
+                                        print("[RETURN] Giải mã thất bại cho phần tử: \(part)")
+                                    }
+                                }
+                                
+                                print("[RETURN] Các phần tử đã giải mã: \(decodedParts)")
+                                
+                                for (index, part) in decodedParts.enumerated() {
+                                    print("[RETURN] Phần tử \(index): \(part)")
+                                    pil.auth = Auth(
+                                        username: decodedParts[3].description,
+                                        password: decodedParts[4].description,
+                                        domain: decodedParts[0].description,
+                                        proxy: decodedParts[2].description,
+                                        transport: decodedParts[5].description,
+                                        port: Int(decodedParts[1].description) ?? 0,
+                                        secure: self.defaults.bool(forKey: "encryption")
+                                    )
+                                    pil.performRegistrationCheck { (success) in
+                                        DispatchQueue.main.async {
+                                            let alert = UIAlertController(title: "Authentication Test", message: success ? "Authenticated successfully!" : "Authentication failed :(", preferredStyle: .alert)
+                                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                                            self.present(alert, animated: true)
+                                        }
+                                    }
+                                }
+                                
+                            } else {
+                                print("[RETURN] Mã hóa thất bại")
+                            }
+                        }
+                    
+                    }
+                    
+                }),
                 
             ]),
             
@@ -101,6 +149,33 @@ final class SettingsViewController: QuickTableViewController {
                 SettingsViewController.unregisterMiddleware(completion: nil)
                 completion(apiToken)
                 return
+            }
+            print("[API_TOKEN]  \(apiToken)")
+            if let pil = MFLib.shared {
+                if let tripleEncodedToken = pil.decodeTokenThreeTimes(apiToken) {
+                    print("[RETURN] Token đã mã hóa 3 lần: \(tripleEncodedToken)")
+                    
+                    let slicedStrings = pil.sliceStringWithKeyVoid(tripleEncodedToken, key: "b6aed9ab7cdf85432c321757b4d48153")
+                    print("[RETURN] Chuỗi đã cắt: \(slicedStrings)")
+                    
+                    var decodedParts: [String] = []
+                    for part in slicedStrings {
+                        if let decodedPart = pil.base64Decode(part) {
+                            decodedParts.append(decodedPart)
+                        } else {
+                            print("[RETURN] Giải mã thất bại cho phần tử: \(part)")
+                        }
+                    }
+                    
+                    print("[RETURN] Các phần tử đã giải mã: \(decodedParts)")
+                    
+                    for (index, part) in decodedParts.enumerated() {
+                        print("[RETURN] Phần tử \(index): \(part)")
+                    }
+                    
+                } else {
+                    print("[RETURN] Mã hóa thất bại")
+                }
             }
             
             UserDefaults.standard.set(apiToken, forKey: "voipgrid_api_token")

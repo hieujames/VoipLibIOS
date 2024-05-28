@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		34D81BD526BCE8624084B596 /* Pods_VoipLibIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91277AAF08A5A37DCCFFA1C /* Pods_VoipLibIOS.framework */; };
+		52E953992BF73BA10034964D /* IncomingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E953982BF73BA10034964D /* IncomingCallViewController.swift */; };
 		52F453B82BC7CF32006392A8 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F451EE2BC79659006392A8 /* Config.plist */; };
 		52F453B92BC7CF32006392A8 /* StagingConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F451EF2BC79659006392A8 /* StagingConfig.plist */; };
 		52F453BB2BC7CF32006392A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F451E92BC79659006392A8 /* LaunchScreen.storyboard */; };
@@ -90,8 +92,7 @@
 		52F454D02BC7E0BE006392A8 /* PushKitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454392BC7DAA4006392A8 /* PushKitDelegate.swift */; };
 		52F454D12BC7E0BE006392A8 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4543B2BC7DAA4006392A8 /* Builder.swift */; };
 		52F454D22BC7E0BE006392A8 /* PIL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4543D2BC7DAA4006392A8 /* PIL.swift */; };
-		59671211455546EB1AA1AE06 /* Pods_VoipLibIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468C42087A27247C9BD9702B /* Pods_VoipLibIOS_Example.framework */; };
-		D475694B987BFA1225FBD428 /* Pods_VoipLibIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C289BD7A9DCDFA1BCB42DFA6 /* Pods_VoipLibIOS.framework */; };
+		C04B0AAD53EECBA98B43F798 /* Pods_VoipLibIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E74474C1B641F05790F4CE /* Pods_VoipLibIOS_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,8 +121,8 @@
 
 /* Begin PBXFileReference section */
 		07ADD230DE005701A126E157 /* VoipLibIOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VoipLibIOS.podspec; path = ../VoipLibIOS.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		20731DD1AC0708C3863169FF /* Pods-VoipLibIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS.debug.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS.debug.xcconfig"; sourceTree = "<group>"; };
-		468C42087A27247C9BD9702B /* Pods_VoipLibIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoipLibIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11E74474C1B641F05790F4CE /* Pods_VoipLibIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoipLibIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29BD07351C250EB1E73BCD97 /* Pods-VoipLibIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS.release.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS.release.xcconfig"; sourceTree = "<group>"; };
 		52A6DC382BC6A5EF004F0D08 /* bctoolbox-ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "bctoolbox-ios.xcframework"; sourceTree = "<group>"; };
 		52A6DC392BC6A5EF004F0D08 /* bctoolbox.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = bctoolbox.xcframework; sourceTree = "<group>"; };
 		52A6DC3A2BC6A5EF004F0D08 /* belcard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = belcard.xcframework; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		52A6DC462BC6A5EF004F0D08 /* mswebrtc.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mswebrtc.xcframework; sourceTree = "<group>"; };
 		52A6DC472BC6A5EF004F0D08 /* ortp.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ortp.xcframework; sourceTree = "<group>"; };
 		52A6DC482BC6A5EF004F0D08 /* ZXing.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ZXing.xcframework; sourceTree = "<group>"; };
+		52E953982BF73BA10034964D /* IncomingCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingCallViewController.swift; sourceTree = "<group>"; };
 		52F451E22BC79658006392A8 /* MFIOSLib Example.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "MFIOSLib Example.entitlements"; sourceTree = "<group>"; };
 		52F451E42BC79659006392A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52F451E52BC79659006392A8 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
@@ -218,10 +220,10 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		99D0EAA0EBCD40A21157CF02 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		B598B2F4F03E1B34661CD065 /* Pods-VoipLibIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		C289BD7A9DCDFA1BCB42DFA6 /* Pods_VoipLibIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoipLibIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB47E62847B1EB576C348E7F /* Pods-VoipLibIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS.release.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS.release.xcconfig"; sourceTree = "<group>"; };
-		E8B12BD7E8D8A11E9766CD3D /* Pods-VoipLibIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
+		B035F51185C391CDDD985E90 /* Pods-VoipLibIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C9FCAC026B9CEED2D1FD3B06 /* Pods-VoipLibIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS.debug.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		E8CEC7B3327ED681A353193A /* Pods-VoipLibIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F91277AAF08A5A37DCCFFA1C /* Pods_VoipLibIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoipLibIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB23165FC698CA07F66F9A79 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,7 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D475694B987BFA1225FBD428 /* Pods_VoipLibIOS.framework in Frameworks */,
+				34D81BD526BCE8624084B596 /* Pods_VoipLibIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,18 +241,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F454092BC7DA18006392A8 /* VoipLibIOS.framework in Frameworks */,
-				59671211455546EB1AA1AE06 /* Pods_VoipLibIOS_Example.framework in Frameworks */,
+				C04B0AAD53EECBA98B43F798 /* Pods_VoipLibIOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		084C89562A413937D66D0EA6 /* Frameworks */ = {
+		149A5969AD50282EE68D8034 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				468C42087A27247C9BD9702B /* Pods_VoipLibIOS_Example.framework */,
-				C289BD7A9DCDFA1BCB42DFA6 /* Pods_VoipLibIOS.framework */,
+				F91277AAF08A5A37DCCFFA1C /* Pods_VoipLibIOS.framework */,
+				11E74474C1B641F05790F4CE /* Pods_VoipLibIOS_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -291,6 +293,7 @@
 		52F451EC2BC79659006392A8 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				52E953982BF73BA10034964D /* IncomingCallViewController.swift */,
 				52F451E42BC79659006392A8 /* Assets.xcassets */,
 				52F451E52BC79659006392A8 /* CallViewController.swift */,
 				52F451E62BC79659006392A8 /* DialerViewController.swift */,
@@ -612,7 +615,7 @@
 				52F454032BC7DA18006392A8 /* VoipLibIOSTests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				7750EA648EFBA2EEA1BD1B33 /* Pods */,
-				084C89562A413937D66D0EA6 /* Frameworks */,
+				149A5969AD50282EE68D8034 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -671,10 +674,10 @@
 		7750EA648EFBA2EEA1BD1B33 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B598B2F4F03E1B34661CD065 /* Pods-VoipLibIOS_Example.debug.xcconfig */,
-				E8B12BD7E8D8A11E9766CD3D /* Pods-VoipLibIOS_Example.release.xcconfig */,
-				20731DD1AC0708C3863169FF /* Pods-VoipLibIOS.debug.xcconfig */,
-				DB47E62847B1EB576C348E7F /* Pods-VoipLibIOS.release.xcconfig */,
+				C9FCAC026B9CEED2D1FD3B06 /* Pods-VoipLibIOS.debug.xcconfig */,
+				29BD07351C250EB1E73BCD97 /* Pods-VoipLibIOS.release.xcconfig */,
+				E8CEC7B3327ED681A353193A /* Pods-VoipLibIOS_Example.debug.xcconfig */,
+				B035F51185C391CDDD985E90 /* Pods-VoipLibIOS_Example.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -696,7 +699,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52F4540B2BC7DA18006392A8 /* Build configuration list for PBXNativeTarget "VoipLibIOS" */;
 			buildPhases = (
-				57A3711D1E47B87D443D65CC /* [CP] Check Pods Manifest.lock */,
+				729216CD4D1404AA0F1E7858 /* [CP] Check Pods Manifest.lock */,
 				52F453F12BC7DA17006392A8 /* Headers */,
 				52F453F22BC7DA17006392A8 /* Sources */,
 				52F453F32BC7DA17006392A8 /* Frameworks */,
@@ -715,13 +718,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "VoipLibIOS_Example" */;
 			buildPhases = (
-				86AD894ABF7DDD8370142425 /* [CP] Check Pods Manifest.lock */,
+				1469742AD8AF2D7B50E88284 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				6ADF533C0EE92ABC9EFA09D4 /* [CP] Embed Pods Frameworks */,
 				52A6DC6B2BC6A7A3004F0D08 /* Embed Frameworks */,
-				CC6CDAB913A03711E6F6567A /* [CP] Copy Pods Resources */,
+				D1BD5A852DF17E977763F54E /* [CP] Embed Pods Frameworks */,
+				9E3443CC3348FBD3080BE4F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -807,97 +810,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		52F453172BC7C860006392A8 /* Export to XCFramework */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Export to XCFramework";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Remove current frameworks\nrm -r linphone-sdk-novideo-frameworks/\n# Copy existing depedencies of linphone to frameworks to be included in pod\ncp -r Pods/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/ linphone-sdk-novideo-frameworks/\n\n# Export linphonesw for device\nxcodebuild archive \\\n-workspace VoipLibIOS.xcworkspace \\\n-scheme linphone-sdk-novideo \\\n-configuration Release \\\n-sdk iphoneos \\\n-archivePath archives/ios_devices.xcarchive \\\nBUILD_LIBRARY_FOR_DISTRIBUTION=YES \\\nSKIP_INSTALL=NO \\\n\n# Export linphonesw for simulator\nxcodebuild archive \\\n-workspace VoipLibIOS.xcworkspace \\\n-scheme linphone-sdk-novideo \\\n-configuration Debug \\\n-sdk iphonesimulator \\\n-archivePath archives/ios_simulators.xcarchive \\\nBUILD_LIBRARY_FOR_DISTRIBUTION=YES \\\nSKIP_INSTALL=NO \\\n\n# Combine both linphonesw frameworks to XCFramework\nxcodebuild \\\n-create-xcframework \\\n-framework archives/ios_devices.xcarchive/Products/Library/Frameworks/linphonesw.framework \\\n-framework archives/ios_simulators.xcarchive/Products/Library/Frameworks/linphonesw.framework \\\n-output linphone-sdk-novideo-frameworks/linphonesw.xcframework\n\n# Remove archives\nrm -rf archives\n";
-		};
-		57A3711D1E47B87D443D65CC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VoipLibIOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6ADF533C0EE92ABC9EFA09D4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/bctoolbox-ios.framework/bctoolbox-ios",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/bctoolbox.framework/bctoolbox",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/belcard.framework/belcard",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/belle-sip.framework/belle-sip",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/belr.framework/belr",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/lime.framework/lime",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/linphone.framework/linphone",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/linphonesw.framework/linphonesw",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/linphonetester.framework/linphonetester",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mediastreamer2.framework/mediastreamer2",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/msamr.framework/msamr",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mscodec2.framework/mscodec2",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/msopenh264.framework/msopenh264",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mssilk.framework/mssilk",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mswebrtc.framework/mswebrtc",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/ortp.framework/ortp",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/ZXing.framework/ZXing",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox-ios.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belcard.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belle-sip.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belr.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/lime.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphone.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphonesw.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphonetester.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mediastreamer2.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/msamr.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mscodec2.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/msopenh264.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mssilk.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mswebrtc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ortp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZXing.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		86AD894ABF7DDD8370142425 /* [CP] Check Pods Manifest.lock */ = {
+		1469742AD8AF2D7B50E88284 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -919,7 +832,47 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC6CDAB913A03711E6F6567A /* [CP] Copy Pods Resources */ = {
+		52F453172BC7C860006392A8 /* Export to XCFramework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Export to XCFramework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Remove current frameworks\nrm -r linphone-sdk-novideo-frameworks/\n# Copy existing depedencies of linphone to frameworks to be included in pod\ncp -r Pods/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/ linphone-sdk-novideo-frameworks/\n\n# Export linphonesw for device\nxcodebuild archive \\\n-workspace VoipLibIOS.xcworkspace \\\n-scheme linphone-sdk-novideo \\\n-configuration Release \\\n-sdk iphoneos \\\n-archivePath archives/ios_devices.xcarchive \\\nBUILD_LIBRARY_FOR_DISTRIBUTION=YES \\\nSKIP_INSTALL=NO \\\n\n# Export linphonesw for simulator\nxcodebuild archive \\\n-workspace VoipLibIOS.xcworkspace \\\n-scheme linphone-sdk-novideo \\\n-configuration Debug \\\n-sdk iphonesimulator \\\n-archivePath archives/ios_simulators.xcarchive \\\nBUILD_LIBRARY_FOR_DISTRIBUTION=YES \\\nSKIP_INSTALL=NO \\\n\n# Combine both linphonesw frameworks to XCFramework\nxcodebuild \\\n-create-xcframework \\\n-framework archives/ios_devices.xcarchive/Products/Library/Frameworks/linphonesw.framework \\\n-framework archives/ios_simulators.xcarchive/Products/Library/Frameworks/linphonesw.framework \\\n-output linphone-sdk-novideo-frameworks/linphonesw.xcframework\n\n# Remove archives\nrm -rf archives\n";
+		};
+		729216CD4D1404AA0F1E7858 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoipLibIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E3443CC3348FBD3080BE4F5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -937,6 +890,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1BD5A852DF17E977763F54E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-ios.framework/bctoolbox-ios",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox.framework/bctoolbox",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belcard.framework/belcard",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belle-sip.framework/belle-sip",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belr.framework/belr",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/lime.framework/lime",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/linphone.framework/linphone",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/linphonetester.framework/linphonetester",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mediastreamer2.framework/mediastreamer2",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/msamr.framework/msamr",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mscodec2.framework/mscodec2",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/msopenh264.framework/msopenh264",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mssilk.framework/mssilk",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mswebrtc.framework/mswebrtc",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ortp.framework/ortp",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ZXing.framework/ZXing",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox-ios.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/bctoolbox.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belcard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belle-sip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belr.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/lime.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphone.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphonetester.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mediastreamer2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/msamr.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mscodec2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/msopenh264.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mssilk.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mswebrtc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ortp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ZXing.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1010,6 +1011,7 @@
 				52F4549C2BC7DB6F006392A8 /* DialerViewController.swift in Sources */,
 				52F4549D2BC7DB6F006392A8 /* InCallDialpadViewController.swift in Sources */,
 				52F4549E2BC7DB6F006392A8 /* SettingsViewController.swift in Sources */,
+				52E953992BF73BA10034964D /* IncomingCallViewController.swift in Sources */,
 				52F4549F2BC7DB6F006392A8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1056,7 +1058,7 @@
 		};
 		52F4540C2BC7DA18006392A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 20731DD1AC0708C3863169FF /* Pods-VoipLibIOS.debug.xcconfig */;
+			baseConfigurationReference = C9FCAC026B9CEED2D1FD3B06 /* Pods-VoipLibIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -1086,6 +1088,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -1106,7 +1109,7 @@
 		};
 		52F4540D2BC7DA18006392A8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB47E62847B1EB576C348E7F /* Pods-VoipLibIOS.release.xcconfig */;
+			baseConfigurationReference = 29BD07351C250EB1E73BCD97 /* Pods-VoipLibIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -1135,6 +1138,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
@@ -1252,7 +1256,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B598B2F4F03E1B34661CD065 /* Pods-VoipLibIOS_Example.debug.xcconfig */;
+			baseConfigurationReference = E8CEC7B3327ED681A353193A /* Pods-VoipLibIOS_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1273,7 +1277,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8B12BD7E8D8A11E9766CD3D /* Pods-VoipLibIOS_Example.release.xcconfig */;
+			baseConfigurationReference = B035F51185C391CDDD985E90 /* Pods-VoipLibIOS_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

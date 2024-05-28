@@ -74,6 +74,7 @@ class CallViewController: UIViewController, PILEventDelegate {
         self.callSubtitle.text = String(describing: call.direction)
         self.callDuration.text = call.prettyDuration
         self.callStatus.text = String(describing: call.state)
+        print("[RETURN] Status for call: \(call.state)")
     }
     
     private func renderCallButtons(call: Call) {

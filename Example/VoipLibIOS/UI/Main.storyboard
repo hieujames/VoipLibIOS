@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="n10-OO-7RU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="n10-OO-7RU">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,7 +13,7 @@
         <!--Settings-->
         <scene sceneID="lHf-ua-IGZ">
             <objects>
-                <viewController title="Settings" id="iji-v9-KEx" customClass="SettingsViewController" customModule="Phone_Lib_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="iji-v9-KEx" customClass="SettingsViewController" customModule="VoipLibIOS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kfe-b2-eOj"/>
                         <viewControllerLayoutGuide type="bottom" id="cOx-ah-Huy"/>
@@ -34,7 +34,7 @@
         <!--Dialer-->
         <scene sceneID="BgK-fz-bAP">
             <objects>
-                <viewController title="Dialer" id="Dqm-1b-3En" customClass="DialerViewController" customModule="Phone_Lib_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dialer" id="Dqm-1b-3En" customClass="DialerViewController" customModule="VoipLibIOS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wl9-Vc-6yh"/>
                         <viewControllerLayoutGuide type="bottom" id="ioz-G4-RjV"/>
@@ -261,7 +261,7 @@
         <!--Call View Controller-->
         <scene sceneID="hBO-Lk-NwY">
             <objects>
-                <viewController storyboardIdentifier="CallViewController" id="3Wi-C9-wNS" customClass="CallViewController" customModule="Phone_Lib_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CallViewController" id="3Wi-C9-wNS" customClass="CallViewController" customModule="VoipLibIOS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QFR-Gp-djg"/>
                         <viewControllerLayoutGuide type="bottom" id="5Wc-vU-ZMI"/>
@@ -509,7 +509,7 @@
                         <outlet property="muteButton" destination="mFc-n6-d3s" id="e6A-TZ-lcf"/>
                         <outlet property="speakerButton" destination="d1s-mr-qgF" id="EW3-VF-Ikj"/>
                         <outlet property="transferButton" destination="XUw-TE-W4S" id="BPF-6Q-AQb"/>
-                        <segue destination="zwf-tG-9HR" kind="unwind" identifier="unwindToDialer" customClass="DialerViewController" customModule="Phone_Lib_Example" customModuleProvider="target" unwindAction="unwind:" id="7bw-hT-MWv"/>
+                        <segue destination="zwf-tG-9HR" kind="unwind" identifier="unwindToDialer" customClass="DialerViewController" customModule="VoipLibIOS_Example" customModuleProvider="target" unwindAction="unwind:" id="7bw-hT-MWv"/>
                         <segue destination="VSh-Yc-jNq" kind="show" identifier="ShowInCallDialpadViewController" id="3qs-U9-AYv"/>
                     </connections>
                 </viewController>
@@ -531,6 +531,7 @@
                         <segue destination="Dqm-1b-3En" kind="relationship" relationship="viewControllers" id="u6a-HV-UJB"/>
                         <segue destination="iji-v9-KEx" kind="relationship" relationship="viewControllers" id="M2Q-fe-1uW"/>
                         <segue destination="3Wi-C9-wNS" kind="presentation" identifier="LaunchCallSegue" id="0zK-Aw-DFA"/>
+                        <segue destination="btK-tX-TkB" kind="presentation" id="tZ7-cG-KTl"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQp-UJ-tFg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -540,7 +541,7 @@
         <!--Dialer-->
         <scene sceneID="bq9-Wj-t98">
             <objects>
-                <viewController title="Dialer" id="VSh-Yc-jNq" customClass="InCallDialpadViewController" customModule="Phone_Lib_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dialer" id="VSh-Yc-jNq" customClass="InCallDialpadViewController" customModule="VoipLibIOS_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nCi-q6-xtA"/>
                         <viewControllerLayoutGuide type="bottom" id="haf-z7-582"/>
@@ -767,14 +768,99 @@
             </objects>
             <point key="canvasLocation" x="522" y="-1176"/>
         </scene>
+        <!--Incoming Call View Controller-->
+        <scene sceneID="Urj-tV-6ao">
+            <objects>
+                <viewController storyboardIdentifier="IncomingCallViewController" id="btK-tX-TkB" customClass="IncomingCallViewController" customModule="iOSVoIPLib_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4bE-WF-GU2"/>
+                        <viewControllerLayoutGuide type="bottom" id="wHy-S1-FUM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p2f-yZ-Etn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steven" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfH-ds-TXi">
+                                <rect key="frame" x="136" y="20" width="103" height="42"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0800123123" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9m-vQ-wVD">
+                                <rect key="frame" x="131" y="70" width="113" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUk-is-MXT" userLabel="DeclineButton">
+                                <rect key="frame" x="229" y="420" width="90" height="65"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="KMP-K3-Tn8"/>
+                                    <constraint firstAttribute="width" constant="90" id="OFH-eb-RnB"/>
+                                </constraints>
+                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="phone.down.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                </state>
+                                <connections>
+                                    <action selector="hangUpButtonWasPressed:" destination="btK-tX-TkB" eventType="touchUpInside" id="4pf-2j-bao"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afM-6F-2Aa" userLabel="AnswerButton">
+                                <rect key="frame" x="56" y="420" width="90" height="65"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="CyH-Yr-m61"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="65" id="opi-fJ-ikb"/>
+                                </constraints>
+                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="phone.fill" catalog="system" symbolScale="large" renderingMode="template"/>
+                                </state>
+                                <connections>
+                                    <action selector="answerButtonWasPressed:" destination="btK-tX-TkB" eventType="touchUpInside" id="gcG-bw-AEL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Incoming Call" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzE-Ao-kFB">
+                                <rect key="frame" x="128" y="529" width="119" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c9m-vQ-wVD" firstAttribute="centerX" secondItem="AzE-Ao-kFB" secondAttribute="centerX" id="0ca-VX-7jU"/>
+                            <constraint firstItem="wHy-S1-FUM" firstAttribute="top" secondItem="AzE-Ao-kFB" secondAttribute="bottom" constant="94" id="HSP-QY-rFe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jUk-is-MXT" secondAttribute="trailing" constant="40" id="HhV-Ts-fb8"/>
+                            <constraint firstItem="EfH-ds-TXi" firstAttribute="centerX" secondItem="c9m-vQ-wVD" secondAttribute="centerX" id="MAB-6X-1Bg"/>
+                            <constraint firstItem="EfH-ds-TXi" firstAttribute="top" secondItem="4bE-WF-GU2" secondAttribute="bottom" constant="20" id="Pif-9W-Eim"/>
+                            <constraint firstItem="c9m-vQ-wVD" firstAttribute="top" secondItem="EfH-ds-TXi" secondAttribute="bottom" constant="8" id="Xky-Jb-8zN"/>
+                            <constraint firstItem="jUk-is-MXT" firstAttribute="top" secondItem="4bE-WF-GU2" secondAttribute="bottom" constant="420" id="fQP-Bp-i9U"/>
+                            <constraint firstItem="afM-6F-2Aa" firstAttribute="leading" secondItem="p2f-yZ-Etn" secondAttribute="leadingMargin" constant="40" id="gst-2I-QBW"/>
+                            <constraint firstItem="afM-6F-2Aa" firstAttribute="top" secondItem="4bE-WF-GU2" secondAttribute="bottom" constant="420" id="kab-HN-4VT"/>
+                            <constraint firstItem="AzE-Ao-kFB" firstAttribute="centerX" secondItem="p2f-yZ-Etn" secondAttribute="centerX" id="r72-4I-ATG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qoe-Fe-5Sk"/>
+                    <connections>
+                        <outlet property="callSubtitle" destination="c9m-vQ-wVD" id="qNI-X2-l9D"/>
+                        <outlet property="callTitle" destination="EfH-ds-TXi" id="RPc-Tl-Qms"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Scs-DC-Heb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-279" y="-1934"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="0zK-Aw-DFA"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="delete.left.fill" catalog="system" width="128" height="104"/>
-        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
-        <image name="phone.down.fill" catalog="system" width="128" height="52"/>
+        <image name="delete.left.fill" catalog="system" width="128" height="102"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
+        <image name="phone.down.fill" catalog="system" width="128" height="55"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -795,7 +881,7 @@
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

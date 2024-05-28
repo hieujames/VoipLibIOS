@@ -59,10 +59,7 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
         LoggingService.Instance.logLevel = .Debug
         linphoneCore = try Factory.Instance.createCore(configPath: "", factoryConfigPath: "", systemContext: nil)
         linphoneCore.addDelegate(delegate: linphoneListener)
-        // try applyPreStartConfiguration(core: linphoneCore)
         try linphoneCore.start()
-        // applyPostStartConfiguration(core: linphoneCore)
-        // configureCodecs(core: linphoneCore)
     }
 
     private func applyPreStartConfiguration(core: Core) throws {
@@ -139,19 +136,15 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
             }
             
             log("No valid registrations, registering for the first time.")
-
-//            let account = try createAccount(core: linphoneCore, auth: auth)
-//            try linphoneCore.addAccount(account: account)
-//            try linphoneCore.addAuthInfo(info: createAuthInfo(auth: auth))
-//            linphoneCore.defaultAccount = account
-            initSipAccount(ext: auth.username, password: auth.password, domain: auth.domain, proxy: auth.proxy, port: auth.port.description, transportType: TransportType.Tls)
+            
+            initSipAccount(ext: auth.username, password: auth.password, domain: auth.domain, proxy: auth.proxy, port: auth.port.description, transportType: auth.transport)
         } catch (let error) {
             log("Linphone registration failed: \(error)")
             callback(.failed)
         }
     }
     
-    private func initSipAccount(ext: String, password: String, domain: String, proxy: String, port: String, transportType: TransportType) {
+    private func initSipAccount(ext: String, password: String, domain: String, proxy: String, port: String, transportType: String) {
         do {
             let authInfo = try Factory.Instance.createAuthInfo(username: ext, userid: "", passwd: password, ha1: "", realm: "", domain: domain)
             // Account object replaces deprecated ProxyConfig object
@@ -164,12 +157,15 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
             
             // We also need to configure where the proxy server is located
             let address = try Factory.Instance.createAddress(addr: String("sip:" + proxy + ":" + port))
-            
-            // We use the Address object to easily set the transport protocol
-            try address.setTransport(newValue: transportType)
+            if(transportType == "tls"){
+                try address.setTransport(newValue: TransportType.Tls)
+            }else if (transportType == "tcp"){
+                try address.setTransport(newValue: TransportType.Udp)
+            }else {
+                try address.setTransport(newValue: TransportType.Tcp)
+            }
             try accountParams.setServeraddress(newValue: address)
             accountParams.outboundProxyEnabled = true
-            // And we ensure the account will start the registration process
             accountParams.registerEnabled = true
             
             // Now that our AccountParams is configured, we can create the Account object
