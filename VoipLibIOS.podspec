@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.swift_version = "5"
     
   s.name             = 'VoipLibIOS'
-  s.version          = '1.0.2'
+  s.version          = '1.0.7'
   s.summary          = 'A short description of VoipLibIOS.'
   
   s.description      = 'This library is an opinionated sip-wrapper'
