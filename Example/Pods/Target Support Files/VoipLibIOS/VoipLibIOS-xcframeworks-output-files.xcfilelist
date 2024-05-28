@@ -1,0 +1,17 @@
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/bctoolbox-ios.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/bctoolbox.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/belcard.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/belle-sip.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/belr.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/lime.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/linphone.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/linphonesw.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/linphonetester.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mediastreamer2.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/msamr.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mscodec2.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/msopenh264.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mssilk.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mswebrtc.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/ortp.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/ZXing.framework

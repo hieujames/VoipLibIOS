@@ -25,9 +25,9 @@ Pod::Spec.new do |s|
 
   s.source_files = 'VoipLibIOS/**/*'
   
-  #s.vendored_frameworks = 'linphone-sdk-novideo-frameworks/*'
+  s.vendored_frameworks = 'linphone-sdk-novideo-frameworks/*'
   s.framework = 'UIKit'
   s.dependency 'Swinject', '~> 2.8.2'
-  s.dependency 'linphone-sdk-novideo'
+  #s.dependency 'linphone-sdk-novideo'
   
 end

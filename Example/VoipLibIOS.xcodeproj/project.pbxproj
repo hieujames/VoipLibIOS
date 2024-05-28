@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -22,6 +22,23 @@
 
 /* Begin PBXBuildFile section */
 		34D81BD526BCE8624084B596 /* Pods_VoipLibIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91277AAF08A5A37DCCFFA1C /* Pods_VoipLibIOS.framework */; };
+		52337FC62C05CA8800FD22AE /* bctoolbox-ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB42C05CA8800FD22AE /* bctoolbox-ios.xcframework */; };
+		52337FC72C05CA8800FD22AE /* bctoolbox.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB52C05CA8800FD22AE /* bctoolbox.xcframework */; };
+		52337FC82C05CA8800FD22AE /* belcard.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB62C05CA8800FD22AE /* belcard.xcframework */; };
+		52337FC92C05CA8800FD22AE /* belle-sip.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB72C05CA8800FD22AE /* belle-sip.xcframework */; };
+		52337FCA2C05CA8800FD22AE /* belr.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB82C05CA8800FD22AE /* belr.xcframework */; };
+		52337FCB2C05CA8800FD22AE /* lime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB92C05CA8800FD22AE /* lime.xcframework */; };
+		52337FCC2C05CA8800FD22AE /* linphone.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBA2C05CA8800FD22AE /* linphone.xcframework */; };
+		52337FCD2C05CA8800FD22AE /* linphonesw.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBB2C05CA8800FD22AE /* linphonesw.xcframework */; };
+		52337FCE2C05CA8800FD22AE /* linphonetester.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBC2C05CA8800FD22AE /* linphonetester.xcframework */; };
+		52337FCF2C05CA8800FD22AE /* mediastreamer2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBD2C05CA8800FD22AE /* mediastreamer2.xcframework */; };
+		52337FD02C05CA8800FD22AE /* msamr.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBE2C05CA8800FD22AE /* msamr.xcframework */; };
+		52337FD12C05CA8800FD22AE /* mscodec2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBF2C05CA8800FD22AE /* mscodec2.xcframework */; };
+		52337FD22C05CA8800FD22AE /* msopenh264.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FC02C05CA8800FD22AE /* msopenh264.xcframework */; };
+		52337FD32C05CA8800FD22AE /* mssilk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FC12C05CA8800FD22AE /* mssilk.xcframework */; };
+		52337FD42C05CA8800FD22AE /* mswebrtc.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FC22C05CA8800FD22AE /* mswebrtc.xcframework */; };
+		52337FD52C05CA8800FD22AE /* ortp.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FC32C05CA8800FD22AE /* ortp.xcframework */; };
+		52337FD62C05CA8900FD22AE /* ZXing.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FC42C05CA8800FD22AE /* ZXing.xcframework */; };
 		52E953992BF73BA10034964D /* IncomingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E953982BF73BA10034964D /* IncomingCallViewController.swift */; };
 		52F453B82BC7CF32006392A8 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F451EE2BC79659006392A8 /* Config.plist */; };
 		52F453B92BC7CF32006392A8 /* StagingConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F451EF2BC79659006392A8 /* StagingConfig.plist */; };
@@ -123,23 +140,23 @@
 		07ADD230DE005701A126E157 /* VoipLibIOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VoipLibIOS.podspec; path = ../VoipLibIOS.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		11E74474C1B641F05790F4CE /* Pods_VoipLibIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoipLibIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BD07351C250EB1E73BCD97 /* Pods-VoipLibIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS.release.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS.release.xcconfig"; sourceTree = "<group>"; };
-		52A6DC382BC6A5EF004F0D08 /* bctoolbox-ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "bctoolbox-ios.xcframework"; sourceTree = "<group>"; };
-		52A6DC392BC6A5EF004F0D08 /* bctoolbox.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = bctoolbox.xcframework; sourceTree = "<group>"; };
-		52A6DC3A2BC6A5EF004F0D08 /* belcard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = belcard.xcframework; sourceTree = "<group>"; };
-		52A6DC3B2BC6A5EF004F0D08 /* belle-sip.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "belle-sip.xcframework"; sourceTree = "<group>"; };
-		52A6DC3C2BC6A5EF004F0D08 /* belr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = belr.xcframework; sourceTree = "<group>"; };
-		52A6DC3D2BC6A5EF004F0D08 /* lime.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = lime.xcframework; sourceTree = "<group>"; };
-		52A6DC3E2BC6A5EF004F0D08 /* linphone.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphone.xcframework; sourceTree = "<group>"; };
-		52A6DC3F2BC6A5EF004F0D08 /* linphonesw.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphonesw.xcframework; sourceTree = "<group>"; };
-		52A6DC402BC6A5EF004F0D08 /* linphonetester.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphonetester.xcframework; sourceTree = "<group>"; };
-		52A6DC412BC6A5EF004F0D08 /* mediastreamer2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mediastreamer2.xcframework; sourceTree = "<group>"; };
-		52A6DC422BC6A5EF004F0D08 /* msamr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = msamr.xcframework; sourceTree = "<group>"; };
-		52A6DC432BC6A5EF004F0D08 /* mscodec2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mscodec2.xcframework; sourceTree = "<group>"; };
-		52A6DC442BC6A5EF004F0D08 /* msopenh264.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = msopenh264.xcframework; sourceTree = "<group>"; };
-		52A6DC452BC6A5EF004F0D08 /* mssilk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mssilk.xcframework; sourceTree = "<group>"; };
-		52A6DC462BC6A5EF004F0D08 /* mswebrtc.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mswebrtc.xcframework; sourceTree = "<group>"; };
-		52A6DC472BC6A5EF004F0D08 /* ortp.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ortp.xcframework; sourceTree = "<group>"; };
-		52A6DC482BC6A5EF004F0D08 /* ZXing.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ZXing.xcframework; sourceTree = "<group>"; };
+		52337FB42C05CA8800FD22AE /* bctoolbox-ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "bctoolbox-ios.xcframework"; sourceTree = "<group>"; };
+		52337FB52C05CA8800FD22AE /* bctoolbox.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = bctoolbox.xcframework; sourceTree = "<group>"; };
+		52337FB62C05CA8800FD22AE /* belcard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = belcard.xcframework; sourceTree = "<group>"; };
+		52337FB72C05CA8800FD22AE /* belle-sip.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "belle-sip.xcframework"; sourceTree = "<group>"; };
+		52337FB82C05CA8800FD22AE /* belr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = belr.xcframework; sourceTree = "<group>"; };
+		52337FB92C05CA8800FD22AE /* lime.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = lime.xcframework; sourceTree = "<group>"; };
+		52337FBA2C05CA8800FD22AE /* linphone.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphone.xcframework; sourceTree = "<group>"; };
+		52337FBB2C05CA8800FD22AE /* linphonesw.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphonesw.xcframework; sourceTree = "<group>"; };
+		52337FBC2C05CA8800FD22AE /* linphonetester.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphonetester.xcframework; sourceTree = "<group>"; };
+		52337FBD2C05CA8800FD22AE /* mediastreamer2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mediastreamer2.xcframework; sourceTree = "<group>"; };
+		52337FBE2C05CA8800FD22AE /* msamr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = msamr.xcframework; sourceTree = "<group>"; };
+		52337FBF2C05CA8800FD22AE /* mscodec2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mscodec2.xcframework; sourceTree = "<group>"; };
+		52337FC02C05CA8800FD22AE /* msopenh264.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = msopenh264.xcframework; sourceTree = "<group>"; };
+		52337FC12C05CA8800FD22AE /* mssilk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mssilk.xcframework; sourceTree = "<group>"; };
+		52337FC22C05CA8800FD22AE /* mswebrtc.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mswebrtc.xcframework; sourceTree = "<group>"; };
+		52337FC32C05CA8800FD22AE /* ortp.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ortp.xcframework; sourceTree = "<group>"; };
+		52337FC42C05CA8800FD22AE /* ZXing.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ZXing.xcframework; sourceTree = "<group>"; };
 		52E953982BF73BA10034964D /* IncomingCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingCallViewController.swift; sourceTree = "<group>"; };
 		52F451E22BC79658006392A8 /* MFIOSLib Example.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "MFIOSLib Example.entitlements"; sourceTree = "<group>"; };
 		52F451E42BC79659006392A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -240,8 +257,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52337FD52C05CA8800FD22AE /* ortp.xcframework in Frameworks */,
+				52337FD62C05CA8900FD22AE /* ZXing.xcframework in Frameworks */,
+				52337FCA2C05CA8800FD22AE /* belr.xcframework in Frameworks */,
+				52337FC72C05CA8800FD22AE /* bctoolbox.xcframework in Frameworks */,
+				52337FCD2C05CA8800FD22AE /* linphonesw.xcframework in Frameworks */,
+				52337FD12C05CA8800FD22AE /* mscodec2.xcframework in Frameworks */,
+				52337FD42C05CA8800FD22AE /* mswebrtc.xcframework in Frameworks */,
 				52F454092BC7DA18006392A8 /* VoipLibIOS.framework in Frameworks */,
+				52337FD02C05CA8800FD22AE /* msamr.xcframework in Frameworks */,
 				C04B0AAD53EECBA98B43F798 /* Pods_VoipLibIOS_Example.framework in Frameworks */,
+				52337FC62C05CA8800FD22AE /* bctoolbox-ios.xcframework in Frameworks */,
+				52337FC82C05CA8800FD22AE /* belcard.xcframework in Frameworks */,
+				52337FCE2C05CA8800FD22AE /* linphonetester.xcframework in Frameworks */,
+				52337FCB2C05CA8800FD22AE /* lime.xcframework in Frameworks */,
+				52337FD22C05CA8800FD22AE /* msopenh264.xcframework in Frameworks */,
+				52337FD32C05CA8800FD22AE /* mssilk.xcframework in Frameworks */,
+				52337FC92C05CA8800FD22AE /* belle-sip.xcframework in Frameworks */,
+				52337FCF2C05CA8800FD22AE /* mediastreamer2.xcframework in Frameworks */,
+				52337FCC2C05CA8800FD22AE /* linphone.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,26 +291,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		52A6DC492BC6A5EF004F0D08 /* linphone-sdk-novideo-frameworks */ = {
+		52337FC52C05CA8800FD22AE /* linphone-sdk-novideo-frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52A6DC382BC6A5EF004F0D08 /* bctoolbox-ios.xcframework */,
-				52A6DC392BC6A5EF004F0D08 /* bctoolbox.xcframework */,
-				52A6DC3A2BC6A5EF004F0D08 /* belcard.xcframework */,
-				52A6DC3B2BC6A5EF004F0D08 /* belle-sip.xcframework */,
-				52A6DC3C2BC6A5EF004F0D08 /* belr.xcframework */,
-				52A6DC3D2BC6A5EF004F0D08 /* lime.xcframework */,
-				52A6DC3E2BC6A5EF004F0D08 /* linphone.xcframework */,
-				52A6DC3F2BC6A5EF004F0D08 /* linphonesw.xcframework */,
-				52A6DC402BC6A5EF004F0D08 /* linphonetester.xcframework */,
-				52A6DC412BC6A5EF004F0D08 /* mediastreamer2.xcframework */,
-				52A6DC422BC6A5EF004F0D08 /* msamr.xcframework */,
-				52A6DC432BC6A5EF004F0D08 /* mscodec2.xcframework */,
-				52A6DC442BC6A5EF004F0D08 /* msopenh264.xcframework */,
-				52A6DC452BC6A5EF004F0D08 /* mssilk.xcframework */,
-				52A6DC462BC6A5EF004F0D08 /* mswebrtc.xcframework */,
-				52A6DC472BC6A5EF004F0D08 /* ortp.xcframework */,
-				52A6DC482BC6A5EF004F0D08 /* ZXing.xcframework */,
+				52337FB42C05CA8800FD22AE /* bctoolbox-ios.xcframework */,
+				52337FB52C05CA8800FD22AE /* bctoolbox.xcframework */,
+				52337FB62C05CA8800FD22AE /* belcard.xcframework */,
+				52337FB72C05CA8800FD22AE /* belle-sip.xcframework */,
+				52337FB82C05CA8800FD22AE /* belr.xcframework */,
+				52337FB92C05CA8800FD22AE /* lime.xcframework */,
+				52337FBA2C05CA8800FD22AE /* linphone.xcframework */,
+				52337FBB2C05CA8800FD22AE /* linphonesw.xcframework */,
+				52337FBC2C05CA8800FD22AE /* linphonetester.xcframework */,
+				52337FBD2C05CA8800FD22AE /* mediastreamer2.xcframework */,
+				52337FBE2C05CA8800FD22AE /* msamr.xcframework */,
+				52337FBF2C05CA8800FD22AE /* mscodec2.xcframework */,
+				52337FC02C05CA8800FD22AE /* msopenh264.xcframework */,
+				52337FC12C05CA8800FD22AE /* mssilk.xcframework */,
+				52337FC22C05CA8800FD22AE /* mswebrtc.xcframework */,
+				52337FC32C05CA8800FD22AE /* ortp.xcframework */,
+				52337FC42C05CA8800FD22AE /* ZXing.xcframework */,
 			);
 			name = "linphone-sdk-novideo-frameworks";
 			path = "../linphone-sdk-novideo-frameworks";
@@ -606,8 +640,8 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				52337FC52C05CA8800FD22AE /* linphone-sdk-novideo-frameworks */,
 				52F453F02BC7DA02006392A8 /* VoipLibIOS */,
-				52A6DC492BC6A5EF004F0D08 /* linphone-sdk-novideo-frameworks */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for VoipLibIOS */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -899,22 +933,23 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox-ios.framework/bctoolbox-ios",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/bctoolbox.framework/bctoolbox",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belcard.framework/belcard",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belle-sip.framework/belle-sip",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/belr.framework/belr",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/lime.framework/lime",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/linphone.framework/linphone",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/linphonetester.framework/linphonetester",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mediastreamer2.framework/mediastreamer2",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/msamr.framework/msamr",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mscodec2.framework/mscodec2",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/msopenh264.framework/msopenh264",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mssilk.framework/mssilk",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/mswebrtc.framework/mswebrtc",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ortp.framework/ortp",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/linphone-sdk-novideo/ZXing.framework/ZXing",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/bctoolbox-ios.framework/bctoolbox-ios",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/bctoolbox.framework/bctoolbox",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/belcard.framework/belcard",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/belle-sip.framework/belle-sip",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/belr.framework/belr",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/lime.framework/lime",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/linphone.framework/linphone",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/linphonesw.framework/linphonesw",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/linphonetester.framework/linphonetester",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mediastreamer2.framework/mediastreamer2",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/msamr.framework/msamr",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mscodec2.framework/mscodec2",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/msopenh264.framework/msopenh264",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mssilk.framework/mssilk",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/mswebrtc.framework/mswebrtc",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/ortp.framework/ortp",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/VoipLibIOS/ZXing.framework/ZXing",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -925,6 +960,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/belr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/lime.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphone.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphonesw.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/linphonetester.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mediastreamer2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/msamr.framework",
@@ -1085,8 +1121,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 CocoaPods. All rights reserved.";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
@@ -1135,8 +1175,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 CocoaPods. All rights reserved.";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACH_O_TYPE = staticlib;
 				MARKETING_VERSION = 1.0;
@@ -1249,7 +1293,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1265,7 +1310,10 @@
 				INFOPLIST_FILE = VoipLibIOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "TEST SDK NEW ";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = phone.build.voipsdkios;
@@ -1286,7 +1334,10 @@
 				INFOPLIST_FILE = VoipLibIOS/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "TEST SDK NEW ";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = phone.build.voipsdkios;

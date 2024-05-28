@@ -1,0 +1,18 @@
+${PODS_ROOT}/Target Support Files/VoipLibIOS/VoipLibIOS-xcframeworks.sh
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/bctoolbox-ios.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/bctoolbox.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/belcard.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/belle-sip.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/belr.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/lime.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/linphone.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/linphonesw.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/linphonetester.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/mediastreamer2.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/msamr.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/mscodec2.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/msopenh264.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/mssilk.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/mswebrtc.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/ortp.xcframework
+${PODS_ROOT}/../../linphone-sdk-novideo-frameworks/ZXing.xcframework

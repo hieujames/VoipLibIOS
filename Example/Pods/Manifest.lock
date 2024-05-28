@@ -5,7 +5,6 @@ PODS:
   - SAMKeychain (1.5.3)
   - Swinject (2.8.5)
   - VoipLibIOS (1.0.2):
-    - linphone-sdk-novideo
     - Swinject (~> 2.8.2)
 
 DEPENDENCIES:
@@ -35,7 +34,7 @@ SPEC CHECKSUMS:
   QuickTableViewController: 25e698de1546c2b829c543d91b64ebc6e884acfc
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   Swinject: 79eb1aba4cd25e1b649492e3600c878af2484bfc
-  VoipLibIOS: ac93f5cea6e731a598ff4626c7eed147bf6096dd
+  VoipLibIOS: 5478927edf2faaf7c27f42c0b76a47c11250b2cb
 
 PODFILE CHECKSUM: dfed7162abcca2c38c373d82f3f7a6beda364559
 

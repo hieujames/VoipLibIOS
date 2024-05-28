@@ -21,13 +21,11 @@
     "tag": "1.0.2"
   },
   "source_files": "VoipLibIOS/**/*",
+  "vendored_frameworks": "linphone-sdk-novideo-frameworks/*",
   "frameworks": "UIKit",
   "dependencies": {
     "Swinject": [
       "~> 2.8.2"
-    ],
-    "linphone-sdk-novideo": [
-
     ]
   },
   "swift_version": "5"
