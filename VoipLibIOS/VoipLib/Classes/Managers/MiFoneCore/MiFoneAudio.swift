@@ -1,14 +1,14 @@
 import Foundation
 import linphonesw
 
-internal class LinphoneAudio {
-    private let manager: LinphoneManager
+internal class MiFoneAudio {
+    private let manager: MiFoneManager
     
     private lazy var core: Core = {
-        manager.linphoneCore!
+        manager.mifoneCore!
     }()
     
-    init(manager: LinphoneManager) {
+    init(manager: MiFoneManager) {
         self.manager = manager
     }
     
@@ -22,7 +22,7 @@ internal class LinphoneAudio {
         let inputRoute = route == .speaker ? fallbackInputRoute : route
         
         core.audioDevices.forEach { device in
-            if outputRoute.matchesLinphoneDevice(device) {
+            if outputRoute.matchesMifoneDevice(device) {
                 if onlySetDefaults {
                     core.defaultOutputAudioDevice = device
                 } else {
@@ -30,7 +30,7 @@ internal class LinphoneAudio {
                 }
             }
             
-            if inputRoute.matchesLinphoneDevice(device) {
+            if inputRoute.matchesMifoneDevice(device) {
                 if onlySetDefaults {
                     core.defaultInputAudioDevice = device
                 } else {
@@ -46,7 +46,7 @@ internal class LinphoneAudio {
     
     func findDevice(_ route: AudioRoute) -> AudioDevice? {
         return core.audioDevices.filter { device in
-            route.matchesLinphoneDevice(device)
+            route.matchesMifoneDevice(device)
         }.first
     }
     
@@ -89,7 +89,7 @@ internal extension AudioDevice {
 
 internal extension AudioRoute {
     /// A single audio route for us will map to many different types of native routes.
-    var asLinphoneRoutes: Set<AudioDeviceType> {
+    var asMifoneRoutes: Set<AudioDeviceType> {
         switch self {
             case .speaker: return [.Speaker]
             case .phone: return [.Microphone]
@@ -97,8 +97,8 @@ internal extension AudioRoute {
         }
     }
     
-    func matchesLinphoneDevice(_ device: AudioDevice) -> Bool {
-        return asLinphoneRoutes.contains(device.type)
+    func matchesMifoneDevice(_ device: AudioDevice) -> Bool {
+        return asMifoneRoutes.contains(device.type)
     }
 }
 

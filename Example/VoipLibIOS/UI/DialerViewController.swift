@@ -39,6 +39,7 @@ class DialerViewController: UIViewController {
                 pil.call(number: number)
             }
         }
+        // pil.call(number: number)
     }
     
     @IBAction func deleteButtonWasPressed(_ sender: UIButton) {

@@ -7,7 +7,7 @@ public class MFLib {
     let app: ApplicationSetup
     
     private let callFactory = di.resolve(PILCallFactory.self)!
-    private lazy var pushKit: PushKitDelegate = { PushKitDelegate(middleware: app.middleware!) }()
+    // private lazy var pushKit: PushKitDelegate = { PushKitDelegate(middleware: app.middleware!) }()
     private lazy var voipLibHelper = { di.resolve(VoIPLibHelper.self)! }()
     internal lazy var platformIntegrator = { di.resolve(PlatformIntegrator.self)! }()
     internal lazy var voipLibEventTranslator = { di.resolve(VoipLibEventTranslator.self)! }()
@@ -21,6 +21,8 @@ public class MFLib {
     public lazy var events = { di.resolve(EventsManager.self)! }()
     public lazy var calls = { di.resolve(Calls.self)! }()
     public lazy var iOS = { di.resolve(IOS.self)! }()
+    
+
     
     public var sessionState: CallSessionState {
         get {
@@ -47,6 +49,7 @@ public class MFLib {
     
     /// The authentication details for the PIL, when this value is updated it will
     /// trigger a full re-register.
+    public var oauth: OAuth?
     public var auth: Auth?
     
     init(applicationSetup: ApplicationSetup) {
@@ -63,12 +66,12 @@ public class MFLib {
             )
         )
     }
-    
+
     /// Check if the PIL is currently configured to successfully register.
     /// Attempt to boot and register to see if user credentials are correct.
     /// - Parameter callback: Called when the registration check has been completed.
     public func performRegistrationCheck(callback: @escaping (Bool) -> Void) {
-        voipLibHelper.register(callback: callback)
+        self.voipLibHelper.register(callback: callback)
     }
     
     /// Start the PIL, unless the force options are provided, the method will not restart or re-register.
@@ -84,7 +87,6 @@ public class MFLib {
             return
         }
         
-        pushKit.registerForVoipPushes()
         iOSCallKit.initialize()
 
         voipLibHelper.register { success in
@@ -108,25 +110,27 @@ public class MFLib {
     /// This will boot the lib if it is not already booted.
     /// - Parameter number: the String number to call.
     public func call(number: String) {
+        print("[OUTGOING_CALL]  \(number)")
         if calls.isInCall {
             events.broadcast(event: .outgoingCallSetupFailed(reason: .inCall))
             return
         }
         
-        // We're just going to refresh registrations here to avoid ghost call issues. So if in a state where registration
-        // fails, then the following call should work.
         voipLib.refreshRegistration()
+        
+        
         
         self.iOSCallKit.startCall(number: number.normalizedForCalling)
     }
     
     internal func writeLog(_ message: String, level: LogLevel = .info) {
-        app.logDelegate?.onLogReceived(message: "PhoneIntegrationLib: \(message)", level: level)
+        app.logDelegate?.onLogReceived(message: "Voip-Lib-IOS: \(message)", level: level)
     }
     
     /// Check whether the PIL has been initialized and the authentication details are set.
     private var isPreparedToStart: Bool {
         auth != nil && voipLib.isInitialized
+        
     }
     
     /// Currently this just defers to ``isPreparedToStart`` as they have the same conditions but this may change in the future.
@@ -137,72 +141,6 @@ public class MFLib {
     public func performEchoCancellationCalibration() {
         log("Beginning echo cancellation calibration")
         voipLib.startEchoCancellerCalibration()
-    }
-    
-    func base64Encode(_ input: String) -> String? {
-        guard let data = input.data(using: .utf8) else { return nil }
-        return data.base64EncodedString()
-    }
-    
-    public func base64Decode(_ input: String) -> String? {
-        guard let data = Data(base64Encoded: input),
-              let decodedString = String(data: data, encoding: .utf8) else { return nil }
-        return decodedString
-    }
-
-
-    public func encodeTokenThreeTimes(_ token: String) -> String? {
-        var encodedToken = token
-        
-        for _ in 1...3 {
-            if let base64Encoded = base64Decode(encodedToken) {
-                encodedToken = base64Encoded
-            } else {
-                return nil
-            }
-        }
-        
-        return encodedToken
-    }
-    
-    public func decodeTokenThreeTimes(_ token: String) -> String? {
-        var decodedToken = token
-        
-        for _ in 1...3 {
-            if let base64Decoded = base64Decode(decodedToken) {
-                decodedToken = base64Decoded
-            } else {
-                return nil
-            }
-        }
-        
-        return decodedToken
-    }
-
-    func sliceStringWithKey(_ input: String, key: String) -> [String] {
-        var slicedStrings: [String] = []
-        var currentIndex = input.startIndex
-        
-        for character in key {
-            let length = Int(character.asciiValue! - Character("a").asciiValue! + 1)
-            let endIndex = input.index(currentIndex, offsetBy: length, limitedBy: input.endIndex) ?? input.endIndex
-            
-            let substring = String(input[currentIndex..<endIndex])
-            slicedStrings.append(substring)
-            
-            currentIndex = endIndex
-            if currentIndex == input.endIndex { break }
-        }
-        
-        if currentIndex < input.endIndex {
-            slicedStrings.append(String(input[currentIndex...]))
-        }
-        
-        return slicedStrings
-    }
-
-    public func sliceStringWithKeyVoid(_ input: String, key: String) -> [String] {
-        return input.components(separatedBy: key)
     }
 }
 
@@ -227,4 +165,8 @@ internal extension String {
             withTemplate: ""
         )
     }
+}
+
+struct InvalidLicenceException: Error {
+    let message: String
 }

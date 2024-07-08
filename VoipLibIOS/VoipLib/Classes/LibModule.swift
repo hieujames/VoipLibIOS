@@ -5,41 +5,41 @@ class LibModule {
     static public let shared = LibModule()
     
     var isInitialized: Bool {
-        get { linphone.isInitialized }
+        get { mifone.isInitialized }
     }
     
     var config: VoIPLibConfig? {
-        linphone.config
+        mifone.config
     }
     
-    var audio: LinphoneAudio {
-        linphone.linphoneAudio
+    var audio: MiFoneAudio {
+        mifone.mifoneAudio
     }
     
-    let linphone: LinphoneManager
+    let mifone: MiFoneManager
     
     init() {
-        linphone = LinphoneManager()
+        mifone = MiFoneManager()
     }
     
     func initialize(config: VoIPLibConfig) {
         if (!isInitialized) {
-            _ = linphone.initialize(config: config)
+            _ = mifone.initialize(config: config)
         }
     }
     
     /// This `registers` your user on SIP. You need this before placing a call.
     /// - Returns: Bool containing register result
     func register(callback: @escaping RegistrationCallback) {
-        linphone.register(callback: callback)
+        mifone.register(callback: callback)
     }
     
     func refreshRegistration() {
-        linphone.refreshRegistration()
+        mifone.refreshRegistration()
     }
     
     func terminateAllCalls() {
-        linphone.terminateAllCalls()
+        mifone.terminateAllCalls()
     }
     
     /// This `unregisters` your user on SIP.
@@ -47,7 +47,7 @@ class LibModule {
     /// - Parameters:
     ///     - finished: Called async when unregistering is done.
     func unregister() {
-        linphone.unregister()
+        mifone.unregister()
     }
     
     /// Call a phone number
@@ -56,26 +56,35 @@ class LibModule {
     ///     - number: The phone number to call
     /// - Returns: Returns true when call succeeds, false when the number is an empty string or the phone service isn't ready.
     func call(to number: String) -> Bool {
-        return linphone.call(to: number) != nil
+        return mifone.call(to: number) != nil
     }
     
     var isMicrophoneMuted:Bool {
         get {
-            linphone.isMicrophoneMuted
+            mifone.isMicrophoneMuted
         }
         
         set(muted) {
-            linphone.setMicrophone(muted: muted)
+            mifone.setMicrophone(muted: muted)
         }
     }
     
     func actions(call: VoIPLibCall) -> Actions {
-        Actions(linphoneManager: linphone, call: call)
+        Actions(mifoneManager: mifone, call: call)
     }
     
     func startEchoCancellerCalibration() {
         do {
-            try linphone.linphoneCore.startEchoCancellerCalibration()
+            try mifone.mifoneCore.startEchoCancellerCalibration()
         } catch {}
     }
+    
+    private func checkLicenceKey(_ licenceKey: String, completion: @escaping (Bool) -> Void) {
+            DispatchQueue.global().async {
+                let isValid = licenceKey == "trial"
+                DispatchQueue.main.async {
+                    completion(isValid)
+                }
+            }
+        }
 }

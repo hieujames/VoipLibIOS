@@ -1,7 +1,6 @@
 import Foundation
 
 public struct ApplicationSetup {
-    public let middleware: Middleware?
     public let requestCallUi: () -> Void
     public let userAgent: String
     public let logDelegate: LogDelegate?
@@ -11,16 +10,14 @@ public struct ApplicationSetup {
     public let ringtonePath: String
     
     public init(
-        middleware: Middleware? = nil,
         requestCallUi: @escaping () -> Void,
-        userAgent: String = "iOS PIL",
+        userAgent: String = "Voip-Lib-IOS",
         logDelegate: LogDelegate? = nil,
         notifyOnMissedCall: Bool = true,
         pushKitPhoneNumberKey: String = "phonenumber",
         pushKitCallerNameKey: String = "caller_id",
         ringtonePath: String = ""
     ) {
-        self.middleware = middleware
         self.userAgent = userAgent
         self.requestCallUi = requestCallUi
         self.logDelegate = logDelegate

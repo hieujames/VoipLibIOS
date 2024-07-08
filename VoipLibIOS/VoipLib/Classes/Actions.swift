@@ -2,11 +2,11 @@ import Foundation
 
 public class Actions {
     
-    let linphone: LinphoneManager
+    let mifone: MiFoneManager
     let call: VoIPLibCall
     
-    init(linphoneManager: LinphoneManager, call: VoIPLibCall) {
-        self.linphone = linphoneManager
+    init(mifoneManager: MiFoneManager, call: VoIPLibCall) {
+        self.mifone = mifoneManager
         self.call = call
     }
     
@@ -16,7 +16,7 @@ public class Actions {
     ///     - VoIPLibCall: The accepting VoIPLibCall
     /// - Returns: `Bool` Whether accepting went successfully
     public func accept() -> Bool {
-        linphone.acceptCall(for: call)
+        mifone.acceptCall(for: call)
     }
     
     /// End an VoIPLibCall.
@@ -25,7 +25,7 @@ public class Actions {
     ///     - VoIPLibCall: The accepting VoIPLibCall
     /// - Returns: `Bool` Whether ending went successfully
     public func end() -> Bool {
-        linphone.endCall(for: call)
+        mifone.endCall(for: call)
     }
     
     /// Enable/disable the audio VoIPLibCall.
@@ -34,7 +34,7 @@ public class Actions {
     /// - Parameters:
     ///     - enabled: State of audio
     public func setAudio(enabled:Bool) {
-        linphone.setAudio(enabled: enabled)
+        mifone.setAudio(enabled: enabled)
     }
     
     /// Set a VoIPLibCall on (un)hold
@@ -44,7 +44,7 @@ public class Actions {
     ///     - onHold: The new hold state
     /// - Returns: `Bool` Whether the change was successful.
     public func hold(onHold hold:Bool) -> Bool {
-        linphone.setHold(call: call, onHold: hold)
+        mifone.setHold(call: call, onHold: hold)
     }
     
     /// Transfer a VoIPLibCall. This is unattended.
@@ -54,7 +54,7 @@ public class Actions {
     ///     - number: Transfer to number
     /// - Returns: `Bool` Whether the transfer was successful.
     public func transfer(to number:String) -> Bool {
-        linphone.transfer(call: call, to: number)
+        mifone.transfer(call: call, to: number)
     }
     
     /// Begin process of attended transfer by VoIPLibCalling the transfer target's number.
@@ -64,7 +64,7 @@ public class Actions {
     ///     - number: The transfer target's number
     /// - Returns: `AttendedTransferVoIPLibCall` The struct with the two VoIPLibCalls.
     public func beginAttendedTransfer(to number:String) -> AttendedTransferSession? {
-        linphone.beginAttendedTransfer(call: call, to:number)
+        mifone.beginAttendedTransfer(call: call, to:number)
     }
     
     /// Finish process of attended transfer by merging the VoIPLibCalls.
@@ -73,7 +73,7 @@ public class Actions {
     ///     - attendedTransferVoIPLibCall: The struct with the two VoIPLibCalls.
     /// - Returns: `Bool` Whether the transfer was successful.
     public func finishAttendedTransfer(attendedTransferSession:AttendedTransferSession) -> Bool {
-        linphone.finishAttendedTransfer(attendedTransferSession:attendedTransferSession)
+        mifone.finishAttendedTransfer(attendedTransferSession:attendedTransferSession)
     }
     
     /// Send Dtmf.
@@ -82,13 +82,13 @@ public class Actions {
     ///     - VoIPLibCall: The VoIPLibCall with the active VoIPLibCall.
     ///     - dtmf: The string with the dtmf digits.
     public func sendDtmf(dtmf: String) {
-        linphone.sendDtmf(call: call, dtmf: dtmf)
+        mifone.sendDtmf(call: call, dtmf: dtmf)
     }
     
     /// Get VoIPLibCall information.
     ///
     /// - Returns: A string with the VoIPLibCall info, empty when could not get any.
     public func VoIPLibCallInfo() -> String {
-        linphone.provideCallInfo(call: call)
+        mifone.provideCallInfo(call: call)
     }
 }

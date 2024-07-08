@@ -1,7 +1,7 @@
 import Foundation
 import linphonesw
 
-internal class LinphoneRegistrationListener : CoreDelegate {
+internal class MiFoneRegistrationListener : CoreDelegate {
     
     /**
      * The amount of time to wait before determining registration has failed.
@@ -28,9 +28,9 @@ internal class LinphoneRegistrationListener : CoreDelegate {
     
     private var timer: Timer? = nil
     
-    private let manager: LinphoneManager
+    private let manager: MiFoneManager
 
-    init(manager: LinphoneManager) {
+    init(manager: MiFoneManager) {
         self.manager = manager
     }
 

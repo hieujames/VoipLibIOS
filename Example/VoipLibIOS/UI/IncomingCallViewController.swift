@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 import VoipLibIOS
 
+@available(iOS 13.0.0, *)
 class IncomingCallViewController: UIViewController, PILEventDelegate {
     
     @IBOutlet weak var callTitle: UILabel!

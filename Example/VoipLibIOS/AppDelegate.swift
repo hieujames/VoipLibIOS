@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogDelegate {
         // Override point for customization after application launch.
 
         loadDefaultCredentialsFromEnvironment()
+        let testOAuth = OAuth(licencesKey: "trial", accessToken: "MTY2MzM4OTA213fewf234_ERF8xNjYzMzg3234_1235MDkxMzkwOWEzYw==")
         
         let applicationSetup = ApplicationSetup(
-            middleware: VoIPGRIDMiddleware(),
             requestCallUi: {
                 if let nav = self.window?.rootViewController as? UITabBarController {
                     nav.performSegue(withIdentifier: "LaunchCallSegue", sender: nav)
@@ -35,15 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogDelegate {
         do {
             _ = try startIOSPIL(
                 applicationSetup: applicationSetup,
-                auth: Auth(
-                    username: self.userDefault(key: "username"),
-                    password: self.userDefault(key: "password"),
-                    domain: self.userDefault(key: "domain"),
-                    proxy: self.userDefault(key: "proxy"),
-                    transport: self.userDefault(key: "transport"),
-                    port: Int(self.userDefault(key: "port")) ?? 0,
-                    secure: self.defaults.bool(forKey: "encryption")
-                )
+                oauth: testOAuth, completion: {_ in 
+                    print("")
+                }
             )
         } catch {
            print("ERROR: Failed to start PIL - \(error)")
@@ -115,6 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogDelegate {
     func onLogReceived(message: String, level: LogLevel) {
         print("\(String(describing: level)) \(message)")
     }
+    
 }
 
 

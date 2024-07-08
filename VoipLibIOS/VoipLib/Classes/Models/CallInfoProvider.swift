@@ -32,22 +32,22 @@ class CallInfoProvider {
     }
     
     private func provideAudioInfo() -> [String:Any] {
-        guard let codec = VoIPLibCall.linphoneCall.currentParams?.usedAudioPayloadType?.description,
-        let codecChannels = VoIPLibCall.linphoneCall.currentParams?.usedAudioPayloadType?.channels,
-        let downloadBandwidth = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.downloadBandwidth,
-        let estimatedDownloadBandwidth = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.estimatedDownloadBandwidth,
-        let jitterBufferSizeMs = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.jitterBufferSizeMs,
-              let loVoIPLibCallateRate = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.localLateRate,
-        let loVoIPLibCallossRate = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.localLossRate,
-        let receiverInterarrivalJitter = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.receiverInterarrivalJitter,
-        let receiverLossRate = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.receiverLossRate,
-        let roundTripDelay = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.roundTripDelay,
-        let rtcpDownloadBandwidth = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.rtcpDownloadBandwidth,
-        let rtcpUploadBandwidth = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.rtcpUploadBandwidth,
-        let senderInterarrivalJitter = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.senderInterarrivalJitter,
-        let senderLossRate = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.senderLossRate,
-        let iceState = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.iceState,
-        let uploadBandwidth = VoIPLibCall.linphoneCall.getStats(type: .Audio)?.uploadBandwidth else {return ["":""]}
+        guard let codec = VoIPLibCall.mifoneCall.currentParams?.usedAudioPayloadType?.description,
+        let codecChannels = VoIPLibCall.mifoneCall.currentParams?.usedAudioPayloadType?.channels,
+        let downloadBandwidth = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.downloadBandwidth,
+        let estimatedDownloadBandwidth = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.estimatedDownloadBandwidth,
+        let jitterBufferSizeMs = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.jitterBufferSizeMs,
+              let loVoIPLibCallateRate = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.localLateRate,
+        let loVoIPLibCallossRate = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.localLossRate,
+        let receiverInterarrivalJitter = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.receiverInterarrivalJitter,
+        let receiverLossRate = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.receiverLossRate,
+        let roundTripDelay = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.roundTripDelay,
+        let rtcpDownloadBandwidth = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.rtcpDownloadBandwidth,
+        let rtcpUploadBandwidth = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.rtcpUploadBandwidth,
+        let senderInterarrivalJitter = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.senderInterarrivalJitter,
+        let senderLossRate = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.senderLossRate,
+        let iceState = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.iceState,
+        let uploadBandwidth = VoIPLibCall.mifoneCall.getStats(type: .Audio)?.uploadBandwidth else {return ["":""]}
         
         let audio: [String:Any] = [
             "codec": codec,
@@ -72,12 +72,12 @@ class CallInfoProvider {
     }
         
     private func provideAdvancedSettings() -> [String:Any] {
-        guard let mtu = VoIPLibCall.linphoneCall.core?.mtu,
-        let echoCancellationEnabled = VoIPLibCall.linphoneCall.core?.echoCancellationEnabled,
-        let adaptiveRateControlEnabled = VoIPLibCall.linphoneCall.core?.adaptiveRateControlEnabled,
-        let audioAdaptiveJittcompEnabled = VoIPLibCall.linphoneCall.core?.audioAdaptiveJittcompEnabled,
-        let rtpBundleEnabled = VoIPLibCall.linphoneCall.core?.rtpBundleEnabled,
-        let adaptiveRateAlgorithm = VoIPLibCall.linphoneCall.core?.adaptiveRateAlgorithm else {return ["":""]}
+        guard let mtu = VoIPLibCall.mifoneCall.core?.mtu,
+        let echoCancellationEnabled = VoIPLibCall.mifoneCall.core?.echoCancellationEnabled,
+        let adaptiveRateControlEnabled = VoIPLibCall.mifoneCall.core?.adaptiveRateControlEnabled,
+        let audioAdaptiveJittcompEnabled = VoIPLibCall.mifoneCall.core?.audioAdaptiveJittcompEnabled,
+        let rtpBundleEnabled = VoIPLibCall.mifoneCall.core?.rtpBundleEnabled,
+        let adaptiveRateAlgorithm = VoIPLibCall.mifoneCall.core?.adaptiveRateAlgorithm else {return ["":""]}
         
         let advancedSettings: [String:Any] = [
             "mtu": mtu,
@@ -92,8 +92,8 @@ class CallInfoProvider {
     }
     
     private func provideToAddressInfo() -> [String:Any] {
-        guard let transport = VoIPLibCall.linphoneCall.toAddress?.transport,
-              let domain = VoIPLibCall.linphoneCall.toAddress?.domain else {return ["":""]}
+        guard let transport = VoIPLibCall.mifoneCall.toAddress?.transport,
+              let domain = VoIPLibCall.mifoneCall.toAddress?.domain else {return ["":""]}
         
         let toAddressInfo: [String:Any] = [
             "transport": transport,
@@ -104,10 +104,10 @@ class CallInfoProvider {
     }
     
     private func provideRemoteParams() -> [String:Any] {
-        guard let remoteEncryption = VoIPLibCall.linphoneCall.remoteParams?.mediaEncryption,
-              let remoteSessionName = VoIPLibCall.linphoneCall.remoteParams?.sessionName,
-              let remotePartyId = VoIPLibCall.linphoneCall.remoteParams?.getCustomHeader(headerName: "Remote-Party-ID"),
-              let pAssertedIdentity = VoIPLibCall.linphoneCall.remoteParams?.getCustomHeader(headerName: "P-Asserted-Identity") else {return ["":""]}
+        guard let remoteEncryption = VoIPLibCall.mifoneCall.remoteParams?.mediaEncryption,
+              let remoteSessionName = VoIPLibCall.mifoneCall.remoteParams?.sessionName,
+              let remotePartyId = VoIPLibCall.mifoneCall.remoteParams?.getCustomHeader(headerName: "Remote-Party-ID"),
+              let pAssertedIdentity = VoIPLibCall.mifoneCall.remoteParams?.getCustomHeader(headerName: "P-Asserted-Identity") else {return ["":""]}
         
         let remoteParams: [String:Any] = [
             "encryption": remoteEncryption,
@@ -120,8 +120,8 @@ class CallInfoProvider {
     }
     
     private func provideParams() -> [String:Any] {
-        guard let encryption = VoIPLibCall.linphoneCall.params?.mediaEncryption,
-              let sessionName = VoIPLibCall.linphoneCall.params?.sessionName else {return ["":""]}
+        guard let encryption = VoIPLibCall.mifoneCall.params?.mediaEncryption,
+              let sessionName = VoIPLibCall.mifoneCall.params?.sessionName else {return ["":""]}
         
         let params: [String:Any] = [
             "encryption": encryption,
@@ -132,15 +132,15 @@ class CallInfoProvider {
     }
 
     private func provideVoIPLibCallProperties() -> [String:Any] {
-        let reason = VoIPLibCall.linphoneCall.reason
-        let duration = VoIPLibCall.linphoneCall.duration
+        let reason = VoIPLibCall.mifoneCall.reason
+        let duration = VoIPLibCall.mifoneCall.duration
         
-        guard let VoIPLibCallId = VoIPLibCall.linphoneCall.callLog?.callId,
-              let refKey = VoIPLibCall.linphoneCall.callLog?.refKey,
-              let status = VoIPLibCall.linphoneCall.callLog?.status,
-              let direction = VoIPLibCall.linphoneCall.callLog?.dir,
-              let quality = VoIPLibCall.linphoneCall.callLog?.quality,
-              let startDate = VoIPLibCall.linphoneCall.callLog?.startDate
+        guard let VoIPLibCallId = VoIPLibCall.mifoneCall.callLog?.callId,
+              let refKey = VoIPLibCall.mifoneCall.callLog?.refKey,
+              let status = VoIPLibCall.mifoneCall.callLog?.status,
+              let direction = VoIPLibCall.mifoneCall.callLog?.dir,
+              let quality = VoIPLibCall.mifoneCall.callLog?.quality,
+              let startDate = VoIPLibCall.mifoneCall.callLog?.startDate
         else { return ["reason": reason, "duration": duration]}
         
         let VoIPLibCallProperties: [String:Any] = [
@@ -158,10 +158,10 @@ class CallInfoProvider {
     }
     
     private func provideErrorInfo() -> [String:Any] {
-        guard let phrase = VoIPLibCall.linphoneCall.errorInfo?.phrase,
-            let errorProtocol = VoIPLibCall.linphoneCall.errorInfo?.proto,
-            let errorReason = VoIPLibCall.linphoneCall.errorInfo?.reason,
-            let protocolCode = VoIPLibCall.linphoneCall.errorInfo?.protocolCode else {return ["":""]}
+        guard let phrase = VoIPLibCall.mifoneCall.errorInfo?.phrase,
+            let errorProtocol = VoIPLibCall.mifoneCall.errorInfo?.proto,
+            let errorReason = VoIPLibCall.mifoneCall.errorInfo?.reason,
+            let protocolCode = VoIPLibCall.mifoneCall.errorInfo?.protocolCode else {return ["":""]}
         
         let errorInfo: [String:Any] = [
             "phrase": phrase,

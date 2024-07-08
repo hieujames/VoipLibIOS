@@ -3,98 +3,98 @@ import linphonesw
 
 public class VoIPLibCall:NSObject {
     public let callId = UUID()
-    let linphoneCall: LinphoneCall
+    let mifoneCall: MiFoneCall
     
     public var remoteNumber: String {
         get {
-            linphoneCall.remoteAddress?.username ?? ""
+            mifoneCall.remoteAddress?.username ?? ""
         }
     }
     
     public var displayName: String {
         get {
-            linphoneCall.remoteAddress?.displayName ?? ""
+            mifoneCall.remoteAddress?.displayName ?? ""
         }
     }
     
     public var remoteEnvironment: String {
         get {
-            linphoneCall.remoteAddress?.domain ?? ""
+            mifoneCall.remoteAddress?.domain ?? ""
         }
     }
     
     public var state:VoipLibCallState {
         get {
-            VoipLibCallState(rawValue: linphoneCall.state.rawValue) ?? .idle
+            VoipLibCallState(rawValue: mifoneCall.state.rawValue) ?? .idle
         }
     }
     
     public var remotePartyId: String {
         get {
-            linphoneCall.params?.getCustomHeader(headerName: "Remote-Party-ID") ?? ""
+            mifoneCall.params?.getCustomHeader(headerName: "Remote-Party-ID") ?? ""
         }
     }
     
     public var pAssertedIdentity: String {
         get {
-            linphoneCall.params?.getCustomHeader(headerName: "P-Asserted-Identity") ?? ""
+            mifoneCall.params?.getCustomHeader(headerName: "P-Asserted-Identity") ?? ""
         }
     }
     
     public var durationInSec:Int? {
-        linphoneCall.duration
+        mifoneCall.duration
     }
     
     public var isIncoming:Bool {
-        return linphoneCall.dir == .Incoming
+        return mifoneCall.dir == .Incoming
     }
     
     public var direction: Direction {
-        return linphoneCall.dir == .Incoming ? .inbound : .outbound
+        return mifoneCall.dir == .Incoming ? .inbound : .outbound
     }
     
     public var quality: Quality {
-        return Quality(average: linphoneCall.averageQuality, current: linphoneCall.currentQuality)
+        return Quality(average: mifoneCall.averageQuality, current: mifoneCall.currentQuality)
     }
     
     /// This can be used to check if different  objects have the same linphone property.
     public var callHash: Int? {
-        return linphoneCall.getCobject?.hashValue
+        return mifoneCall.getCobject?.hashValue
     }
     
     public var reason: String {
-        return String.init(describing: linphoneCall.reason)
+        return String.init(describing: mifoneCall.reason)
     }
     
     public var wasMissed: Bool {
-        guard let log = linphoneCall.callLog else {
+        guard let log = mifoneCall.callLog else {
             return false
         }
         
         let missedStatuses = [
-            LinphoneCall.Status.Missed,
-            LinphoneCall.Status.Aborted,
-            LinphoneCall.Status.EarlyAborted,
+            MiFoneCall.Status.Missed,
+            MiFoneCall.Status.Aborted,
+            MiFoneCall.Status.EarlyAborted,
         ]
         
-        return log.dir == LinphoneCall.Dir.Incoming && missedStatuses.contains(log.status)
+        return log.dir == MiFoneCall.Dir.Incoming && missedStatuses.contains(log.status)
     }
     
-    init?(linphoneCall: LinphoneCall) {
-        guard linphoneCall.remoteAddress != nil else { return nil }
-        self.linphoneCall = linphoneCall
+    init?(mifoneCall: MiFoneCall) {
+        guard mifoneCall.remoteAddress != nil else { return nil }
+        self.mifoneCall = mifoneCall
     }
         
     /// Resumes a .
     /// The  needs to have been paused previously with `pause()`
     public func resume() throws {
-        try linphoneCall.resume()
+        try mifoneCall.resume()
     }
     
     /// Pauses the .
     /// be played to the remote user. The only way to resume a paused  is to  `resume()`
     public func pause() throws {
-        try linphoneCall.pause()
+        try mifoneCall.pause()
     }
 }
 

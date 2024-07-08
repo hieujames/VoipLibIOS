@@ -21,7 +21,7 @@
     "tag": "1.0.7"
   },
   "source_files": "VoipLibIOS/**/*",
-  "vendored_frameworks": "linphone-sdk-novideo-frameworks/*",
+  "vendored_frameworks": "libs/*",
   "frameworks": "UIKit",
   "dependencies": {
     "Swinject": [

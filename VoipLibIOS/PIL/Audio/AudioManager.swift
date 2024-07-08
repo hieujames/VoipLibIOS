@@ -11,14 +11,14 @@ public class AudioManager {
     private let pil: MFLib
     private let callActions: CallActions
     
-    private var linphoneAudio: LinphoneAudio {
-        voipLib.linphone.linphoneAudio
+    private var mifoneAudio: MiFoneAudio {
+        voipLib.mifone.mifoneAudio
     }
     
     public var state: AudioState {
         AudioState(
-            currentRoute: linphoneAudio.currentRoute,
-            availableRoutes: linphoneAudio.availableRoutes,
+            currentRoute: mifoneAudio.currentRoute,
+            availableRoutes: mifoneAudio.availableRoutes,
             bluetoothDeviceName: findBluetoothName(),
             isMicrophoneMuted: isMicrophoneMuted
         )
@@ -49,17 +49,17 @@ public class AudioManager {
         // when it is really necessary, such as when the user is using the phone's speaker.
         if (route == AudioRoute.speaker) {
             pil.calls.list.callArray.forEach { call in
-                call.linphoneCall.echoLimiterEnabled = true
-                call.linphoneCall.echoCancellationEnabled = false
+                call.mifoneCall.echoLimiterEnabled = true
+                call.mifoneCall.echoCancellationEnabled = false
             }
         } else {
             pil.calls.list.callArray.forEach { call in
-                call.linphoneCall.echoLimiterEnabled = false
-                call.linphoneCall.echoCancellationEnabled = true
+                call.mifoneCall.echoLimiterEnabled = false
+                call.mifoneCall.echoCancellationEnabled = true
             }
         }
         
-        linphoneAudio.routeAudio(to: route)
+        mifoneAudio.routeAudio(to: route)
         
         log("Routed audio to \(route)")
     }
@@ -74,17 +74,17 @@ public class AudioManager {
     }
     
     private func isRouteAvailable(_ route: AudioRoute) -> Bool {
-        return linphoneAudio.hasAudioRouteAvailable(.phone)
+        return mifoneAudio.hasAudioRouteAvailable(.phone)
     }
     
     private func findBluetoothName() -> String? {
-        if linphoneAudio.currentRoute == .bluetooth {
-            if let currentDevice = linphoneAudio.currentAudioDevice {
+        if mifoneAudio.currentRoute == .bluetooth {
+            if let currentDevice = mifoneAudio.currentAudioDevice {
                 return currentDevice.deviceName
             }
         }
         
-        return linphoneAudio.findDevice(.bluetooth)?.deviceName
+        return mifoneAudio.findDevice(.bluetooth)?.deviceName
     }
     
     public func mute() { callActions.mute() }
@@ -96,7 +96,7 @@ public class AudioManager {
     private func setAppropriateDefaults() {
         let route = isRouteAvailable(.bluetooth) ? AudioRoute.bluetooth : .phone
         
-        linphoneAudio.routeAudio(
+        mifoneAudio.routeAudio(
             to: route,
             onlySetDefaults: true
         )
@@ -115,7 +115,7 @@ public class AudioManager {
     
     @objc func handleRouteChange(notification: Notification) {
         setAppropriateDefaults()
-        log("Detected audio route change from the OS: \(linphoneAudio.audioDevicesAsString)")
+        log("Detected audio route change from the OS: \(mifoneAudio.audioDevicesAsString)")
         pil.events.broadcast(event: .audioStateUpdated(state: pil.sessionState))
     }
 }

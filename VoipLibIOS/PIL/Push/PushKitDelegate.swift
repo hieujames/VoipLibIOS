@@ -4,11 +4,10 @@ import PushKit
 class PushKitDelegate: NSObject {
 
     let pil = di.resolve(MFLib.self)!
-    let middleware: Middleware
     let voipRegistry: PKPushRegistry
 
     init(middleware: Middleware) {
-        self.middleware = middleware
+//        self.middleware = middleware
         voipRegistry = PKPushRegistry(queue: nil)
     }
 
@@ -17,7 +16,7 @@ class PushKitDelegate: NSObject {
         voipRegistry.desiredPushTypes = [.voIP]
 
         if let token = token {
-            middleware.tokenReceived(token: token)
+//            middleware.tokenReceived(token: token)
         }
     }
 }
@@ -46,28 +45,28 @@ extension PushKitDelegate: PKPushRegistryDelegate {
     }
     
     private func handle(payload: PKPushPayload, for type: PKPushType, completion: @escaping () -> ()) {
-        self.middleware.inspect(payload: payload, type: type)
+        // self.middleware.inspect(payload: payload, type: type)
             
         pil.writeLog("Received a VoIP push message, starting incoming ringing.")
     
         if pil.calls.isInCall {
             pil.writeLog("Not taking call as we already have an active one!")
-            self.middleware.respond(payload: payload, available: false, reason: UnavailableReason.inCall)
+            // self.middleware.respond(payload: payload, available: false, reason: UnavailableReason.inCall)
             completion()
             return
         }
                         
-        pil.start { success in
-            self.pil.writeLog("PIL started with success=\(success), responding to middleware: \(success)")
-            
-            if success {
-                self.middleware.respond(payload: payload, available: true)
-            } else {
-                self.middleware.respond(payload: payload, available: false, reason: UnavailableReason.unableToRegister)
-            }
-            
-            completion()
-        }
+//        pil.start { success in
+//            //self.pil.writeLog("PIL started with success=\(success), responding to middleware: \(success)")
+//            
+//            if success {
+//                self.middleware.respond(payload: payload, available: true)
+//            } else {
+//                self.middleware.respond(payload: payload, available: false, reason: UnavailableReason.unableToRegister)
+//            }
+//            
+//            completion()
+//        }
     }
 
     var token: String? {
@@ -84,7 +83,7 @@ extension PushKitDelegate: PKPushRegistryDelegate {
         let token = String(apnsToken: pushCredentials.token)
         log("Received a new APNS token: \(token)")
 
-        middleware.tokenReceived(token: token)
+        //middleware.tokenReceived(token: token)
     }
     
 }

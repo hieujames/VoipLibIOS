@@ -34,7 +34,7 @@ class IOSCallKit: NSObject {
                 localizedName: Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
         )
 
-        if let icon = UIImage(named: "PhoneIntegrationLibCallKitIcon") {
+        if let icon = UIImage(named: "VoipIOSLib") {
             providerConfiguration.iconTemplateImageData = icon.pngData()
         }
         

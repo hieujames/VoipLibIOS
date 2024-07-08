@@ -21,25 +21,46 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		34D81BD526BCE8624084B596 /* Pods_VoipLibIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91277AAF08A5A37DCCFFA1C /* Pods_VoipLibIOS.framework */; };
-		52337FC62C05CA8800FD22AE /* bctoolbox-ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB42C05CA8800FD22AE /* bctoolbox-ios.xcframework */; };
-		52337FC72C05CA8800FD22AE /* bctoolbox.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB52C05CA8800FD22AE /* bctoolbox.xcframework */; };
-		52337FC82C05CA8800FD22AE /* belcard.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB62C05CA8800FD22AE /* belcard.xcframework */; };
-		52337FC92C05CA8800FD22AE /* belle-sip.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB72C05CA8800FD22AE /* belle-sip.xcframework */; };
-		52337FCA2C05CA8800FD22AE /* belr.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB82C05CA8800FD22AE /* belr.xcframework */; };
-		52337FCB2C05CA8800FD22AE /* lime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FB92C05CA8800FD22AE /* lime.xcframework */; };
-		52337FCC2C05CA8800FD22AE /* linphone.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBA2C05CA8800FD22AE /* linphone.xcframework */; };
-		52337FCD2C05CA8800FD22AE /* linphonesw.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBB2C05CA8800FD22AE /* linphonesw.xcframework */; };
-		52337FCE2C05CA8800FD22AE /* linphonetester.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBC2C05CA8800FD22AE /* linphonetester.xcframework */; };
-		52337FCF2C05CA8800FD22AE /* mediastreamer2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBD2C05CA8800FD22AE /* mediastreamer2.xcframework */; };
-		52337FD02C05CA8800FD22AE /* msamr.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBE2C05CA8800FD22AE /* msamr.xcframework */; };
-		52337FD12C05CA8800FD22AE /* mscodec2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FBF2C05CA8800FD22AE /* mscodec2.xcframework */; };
-		52337FD22C05CA8800FD22AE /* msopenh264.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FC02C05CA8800FD22AE /* msopenh264.xcframework */; };
-		52337FD32C05CA8800FD22AE /* mssilk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FC12C05CA8800FD22AE /* mssilk.xcframework */; };
-		52337FD42C05CA8800FD22AE /* mswebrtc.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FC22C05CA8800FD22AE /* mswebrtc.xcframework */; };
-		52337FD52C05CA8800FD22AE /* ortp.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FC32C05CA8800FD22AE /* ortp.xcframework */; };
-		52337FD62C05CA8900FD22AE /* ZXing.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52337FC42C05CA8800FD22AE /* ZXing.xcframework */; };
+		3D21A40B292CDA57636C1A0C /* Pods_VoipLibIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B910B3D7D8BE0814129E022F /* Pods_VoipLibIOS.framework */; };
+		5213149E2C37DA8B00363AD3 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5213149A2C37D85300363AD3 /* HttpClient.swift */; };
+		5213149F2C37DA8E00363AD3 /* Config.json in Resources */ = {isa = PBXBuildFile; fileRef = 5213149C2C37D99B00363AD3 /* Config.json */; };
+		522BB9572C36492B00483DAA /* OAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52EE20302C329EE800BE4777 /* OAuth.swift */; };
+		52E308FA2C3BE249006FC802 /* ParseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E308F82C3BE249006FC802 /* ParseString.swift */; };
 		52E953992BF73BA10034964D /* IncomingCallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E953982BF73BA10034964D /* IncomingCallViewController.swift */; };
+		52EE200E2C3259E500BE4777 /* bctoolbox-ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE1FFC2C3259E500BE4777 /* bctoolbox-ios.xcframework */; };
+		52EE200F2C3259E500BE4777 /* bctoolbox.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE1FFD2C3259E500BE4777 /* bctoolbox.xcframework */; };
+		52EE20102C3259E500BE4777 /* belcard.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE1FFE2C3259E500BE4777 /* belcard.xcframework */; };
+		52EE20112C3259E500BE4777 /* belle-sip.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE1FFF2C3259E500BE4777 /* belle-sip.xcframework */; };
+		52EE20122C3259E500BE4777 /* belr.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20002C3259E500BE4777 /* belr.xcframework */; };
+		52EE20132C3259E500BE4777 /* lime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20012C3259E500BE4777 /* lime.xcframework */; };
+		52EE20142C3259E500BE4777 /* linphone.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20022C3259E500BE4777 /* linphone.xcframework */; };
+		52EE20152C3259E500BE4777 /* linphonesw.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20032C3259E500BE4777 /* linphonesw.xcframework */; };
+		52EE20162C3259E500BE4777 /* linphonetester.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20042C3259E500BE4777 /* linphonetester.xcframework */; };
+		52EE20172C3259E500BE4777 /* mediastreamer2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20052C3259E500BE4777 /* mediastreamer2.xcframework */; };
+		52EE20182C3259E500BE4777 /* msamr.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20062C3259E500BE4777 /* msamr.xcframework */; };
+		52EE20192C3259E500BE4777 /* mscodec2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20072C3259E500BE4777 /* mscodec2.xcframework */; };
+		52EE201A2C3259E500BE4777 /* msopenh264.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20082C3259E500BE4777 /* msopenh264.xcframework */; };
+		52EE201B2C3259E500BE4777 /* mssilk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20092C3259E500BE4777 /* mssilk.xcframework */; };
+		52EE201C2C3259E500BE4777 /* mswebrtc.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE200A2C3259E500BE4777 /* mswebrtc.xcframework */; };
+		52EE201D2C3259E500BE4777 /* ortp.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE200B2C3259E500BE4777 /* ortp.xcframework */; };
+		52EE201E2C3259E500BE4777 /* ZXing.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE200C2C3259E500BE4777 /* ZXing.xcframework */; };
+		52EE201F2C3291FE00BE4777 /* bctoolbox-ios.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE1FFC2C3259E500BE4777 /* bctoolbox-ios.xcframework */; };
+		52EE20202C3291FE00BE4777 /* bctoolbox.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE1FFD2C3259E500BE4777 /* bctoolbox.xcframework */; };
+		52EE20212C3291FE00BE4777 /* belcard.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE1FFE2C3259E500BE4777 /* belcard.xcframework */; };
+		52EE20222C3291FE00BE4777 /* belle-sip.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE1FFF2C3259E500BE4777 /* belle-sip.xcframework */; };
+		52EE20232C3291FE00BE4777 /* belr.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20002C3259E500BE4777 /* belr.xcframework */; };
+		52EE20242C3291FE00BE4777 /* lime.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20012C3259E500BE4777 /* lime.xcframework */; };
+		52EE20252C3291FE00BE4777 /* linphone.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20022C3259E500BE4777 /* linphone.xcframework */; };
+		52EE20262C3291FF00BE4777 /* linphonesw.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20032C3259E500BE4777 /* linphonesw.xcframework */; };
+		52EE20272C3291FF00BE4777 /* linphonetester.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20042C3259E500BE4777 /* linphonetester.xcframework */; };
+		52EE20282C3291FF00BE4777 /* mediastreamer2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20052C3259E500BE4777 /* mediastreamer2.xcframework */; };
+		52EE20292C3291FF00BE4777 /* msamr.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20062C3259E500BE4777 /* msamr.xcframework */; };
+		52EE202A2C3291FF00BE4777 /* mscodec2.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20072C3259E500BE4777 /* mscodec2.xcframework */; };
+		52EE202B2C3291FF00BE4777 /* msopenh264.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20082C3259E500BE4777 /* msopenh264.xcframework */; };
+		52EE202C2C3291FF00BE4777 /* mssilk.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE20092C3259E500BE4777 /* mssilk.xcframework */; };
+		52EE202D2C3291FF00BE4777 /* mswebrtc.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE200A2C3259E500BE4777 /* mswebrtc.xcframework */; };
+		52EE202E2C3291FF00BE4777 /* ortp.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE200B2C3259E500BE4777 /* ortp.xcframework */; };
+		52EE202F2C3291FF00BE4777 /* ZXing.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52EE200C2C3259E500BE4777 /* ZXing.xcframework */; };
 		52F453B82BC7CF32006392A8 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F451EE2BC79659006392A8 /* Config.plist */; };
 		52F453B92BC7CF32006392A8 /* StagingConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52F451EF2BC79659006392A8 /* StagingConfig.plist */; };
 		52F453BB2BC7CF32006392A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F451E92BC79659006392A8 /* LaunchScreen.storyboard */; };
@@ -62,10 +83,10 @@
 		52F454A12BC7DBE4006392A8 /* ringback.wav in Resources */ = {isa = PBXBuildFile; fileRef = 52F451ED2BC79659006392A8 /* ringback.wav */; };
 		52F454A22BC7E0B0006392A8 /* VoIPLibConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454412BC7DAA4006392A8 /* VoIPLibConfig.swift */; };
 		52F454A32BC7E0B0006392A8 /* InitializationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454432BC7DAA4006392A8 /* InitializationError.swift */; };
-		52F454A42BC7E0B0006392A8 /* LinphoneAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454452BC7DAA4006392A8 /* LinphoneAudio.swift */; };
-		52F454A52BC7E0B0006392A8 /* LinphoneListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454462BC7DAA4006392A8 /* LinphoneListener.swift */; };
-		52F454A62BC7E0B0006392A8 /* LinphoneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454472BC7DAA4006392A8 /* LinphoneManager.swift */; };
-		52F454A72BC7E0B0006392A8 /* LinphoneRegistrationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454482BC7DAA4006392A8 /* LinphoneRegistrationListener.swift */; };
+		52F454A42BC7E0B0006392A8 /* MiFoneAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454452BC7DAA4006392A8 /* MiFoneAudio.swift */; };
+		52F454A52BC7E0B0006392A8 /* MiFoneListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454462BC7DAA4006392A8 /* MiFoneListener.swift */; };
+		52F454A62BC7E0B0006392A8 /* MiFoneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454472BC7DAA4006392A8 /* MiFoneManager.swift */; };
+		52F454A72BC7E0B0006392A8 /* MiFoneRegistrationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454482BC7DAA4006392A8 /* MiFoneRegistrationListener.swift */; };
 		52F454A82BC7E0B0006392A8 /* AttendedTransferSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4544B2BC7DAA4006392A8 /* AttendedTransferSession.swift */; };
 		52F454A92BC7E0B0006392A8 /* CallInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4544C2BC7DAA4006392A8 /* CallInfoProvider.swift */; };
 		52F454AA2BC7E0B0006392A8 /* Codec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4544D2BC7DAA4006392A8 /* Codec.swift */; };
@@ -108,8 +129,8 @@
 		52F454CF2BC7E0BE006392A8 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454382BC7DAA4006392A8 /* Middleware.swift */; };
 		52F454D02BC7E0BE006392A8 /* PushKitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F454392BC7DAA4006392A8 /* PushKitDelegate.swift */; };
 		52F454D12BC7E0BE006392A8 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4543B2BC7DAA4006392A8 /* Builder.swift */; };
-		52F454D22BC7E0BE006392A8 /* PIL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4543D2BC7DAA4006392A8 /* PIL.swift */; };
-		C04B0AAD53EECBA98B43F798 /* Pods_VoipLibIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E74474C1B641F05790F4CE /* Pods_VoipLibIOS_Example.framework */; };
+		52F454D22BC7E0BE006392A8 /* MFLib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4543D2BC7DAA4006392A8 /* MFLib.swift */; };
+		C3EA23B3C67DE921A40DE4CF /* Pods_VoipLibIOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30C2A19A98854AA49243A1A2 /* Pods_VoipLibIOS_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,26 +159,31 @@
 
 /* Begin PBXFileReference section */
 		07ADD230DE005701A126E157 /* VoipLibIOS.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = VoipLibIOS.podspec; path = ../VoipLibIOS.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		11E74474C1B641F05790F4CE /* Pods_VoipLibIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoipLibIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		29BD07351C250EB1E73BCD97 /* Pods-VoipLibIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS.release.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS.release.xcconfig"; sourceTree = "<group>"; };
-		52337FB42C05CA8800FD22AE /* bctoolbox-ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "bctoolbox-ios.xcframework"; sourceTree = "<group>"; };
-		52337FB52C05CA8800FD22AE /* bctoolbox.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = bctoolbox.xcframework; sourceTree = "<group>"; };
-		52337FB62C05CA8800FD22AE /* belcard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = belcard.xcframework; sourceTree = "<group>"; };
-		52337FB72C05CA8800FD22AE /* belle-sip.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "belle-sip.xcframework"; sourceTree = "<group>"; };
-		52337FB82C05CA8800FD22AE /* belr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = belr.xcframework; sourceTree = "<group>"; };
-		52337FB92C05CA8800FD22AE /* lime.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = lime.xcframework; sourceTree = "<group>"; };
-		52337FBA2C05CA8800FD22AE /* linphone.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphone.xcframework; sourceTree = "<group>"; };
-		52337FBB2C05CA8800FD22AE /* linphonesw.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphonesw.xcframework; sourceTree = "<group>"; };
-		52337FBC2C05CA8800FD22AE /* linphonetester.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphonetester.xcframework; sourceTree = "<group>"; };
-		52337FBD2C05CA8800FD22AE /* mediastreamer2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mediastreamer2.xcframework; sourceTree = "<group>"; };
-		52337FBE2C05CA8800FD22AE /* msamr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = msamr.xcframework; sourceTree = "<group>"; };
-		52337FBF2C05CA8800FD22AE /* mscodec2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mscodec2.xcframework; sourceTree = "<group>"; };
-		52337FC02C05CA8800FD22AE /* msopenh264.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = msopenh264.xcframework; sourceTree = "<group>"; };
-		52337FC12C05CA8800FD22AE /* mssilk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mssilk.xcframework; sourceTree = "<group>"; };
-		52337FC22C05CA8800FD22AE /* mswebrtc.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mswebrtc.xcframework; sourceTree = "<group>"; };
-		52337FC32C05CA8800FD22AE /* ortp.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ortp.xcframework; sourceTree = "<group>"; };
-		52337FC42C05CA8800FD22AE /* ZXing.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ZXing.xcframework; sourceTree = "<group>"; };
+		30C2A19A98854AA49243A1A2 /* Pods_VoipLibIOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoipLibIOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30EF98BBAC15045912EC4EC2 /* Pods-VoipLibIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS.release.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS.release.xcconfig"; sourceTree = "<group>"; };
+		34D73C7ECB1D2AA448089475 /* Pods-VoipLibIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
+		5213149A2C37D85300363AD3 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		5213149C2C37D99B00363AD3 /* Config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Config.json; sourceTree = "<group>"; };
+		52E308F82C3BE249006FC802 /* ParseString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseString.swift; sourceTree = "<group>"; };
 		52E953982BF73BA10034964D /* IncomingCallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomingCallViewController.swift; sourceTree = "<group>"; };
+		52EE1FFC2C3259E500BE4777 /* bctoolbox-ios.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "bctoolbox-ios.xcframework"; sourceTree = "<group>"; };
+		52EE1FFD2C3259E500BE4777 /* bctoolbox.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = bctoolbox.xcframework; sourceTree = "<group>"; };
+		52EE1FFE2C3259E500BE4777 /* belcard.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = belcard.xcframework; sourceTree = "<group>"; };
+		52EE1FFF2C3259E500BE4777 /* belle-sip.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = "belle-sip.xcframework"; sourceTree = "<group>"; };
+		52EE20002C3259E500BE4777 /* belr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = belr.xcframework; sourceTree = "<group>"; };
+		52EE20012C3259E500BE4777 /* lime.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = lime.xcframework; sourceTree = "<group>"; };
+		52EE20022C3259E500BE4777 /* linphone.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphone.xcframework; sourceTree = "<group>"; };
+		52EE20032C3259E500BE4777 /* linphonesw.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphonesw.xcframework; sourceTree = "<group>"; };
+		52EE20042C3259E500BE4777 /* linphonetester.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = linphonetester.xcframework; sourceTree = "<group>"; };
+		52EE20052C3259E500BE4777 /* mediastreamer2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mediastreamer2.xcframework; sourceTree = "<group>"; };
+		52EE20062C3259E500BE4777 /* msamr.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = msamr.xcframework; sourceTree = "<group>"; };
+		52EE20072C3259E500BE4777 /* mscodec2.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mscodec2.xcframework; sourceTree = "<group>"; };
+		52EE20082C3259E500BE4777 /* msopenh264.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = msopenh264.xcframework; sourceTree = "<group>"; };
+		52EE20092C3259E500BE4777 /* mssilk.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mssilk.xcframework; sourceTree = "<group>"; };
+		52EE200A2C3259E500BE4777 /* mswebrtc.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = mswebrtc.xcframework; sourceTree = "<group>"; };
+		52EE200B2C3259E500BE4777 /* ortp.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ortp.xcframework; sourceTree = "<group>"; };
+		52EE200C2C3259E500BE4777 /* ZXing.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ZXing.xcframework; sourceTree = "<group>"; };
+		52EE20302C329EE800BE4777 /* OAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth.swift; sourceTree = "<group>"; };
 		52F451E22BC79658006392A8 /* MFIOSLib Example.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "MFIOSLib Example.entitlements"; sourceTree = "<group>"; };
 		52F451E42BC79659006392A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52F451E52BC79659006392A8 /* CallViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallViewController.swift; sourceTree = "<group>"; };
@@ -209,14 +235,14 @@
 		52F454392BC7DAA4006392A8 /* PushKitDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushKitDelegate.swift; sourceTree = "<group>"; };
 		52F4543B2BC7DAA4006392A8 /* Builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
 		52F4543C2BC7DAA4006392A8 /* Localizable.stringsdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
-		52F4543D2BC7DAA4006392A8 /* PIL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PIL.swift; sourceTree = "<group>"; };
+		52F4543D2BC7DAA4006392A8 /* MFLib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MFLib.swift; sourceTree = "<group>"; };
 		52F4543F2BC7DAA4006392A8 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		52F454412BC7DAA4006392A8 /* VoIPLibConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoIPLibConfig.swift; sourceTree = "<group>"; };
 		52F454432BC7DAA4006392A8 /* InitializationError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitializationError.swift; sourceTree = "<group>"; };
-		52F454452BC7DAA4006392A8 /* LinphoneAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinphoneAudio.swift; sourceTree = "<group>"; };
-		52F454462BC7DAA4006392A8 /* LinphoneListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinphoneListener.swift; sourceTree = "<group>"; };
-		52F454472BC7DAA4006392A8 /* LinphoneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinphoneManager.swift; sourceTree = "<group>"; };
-		52F454482BC7DAA4006392A8 /* LinphoneRegistrationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinphoneRegistrationListener.swift; sourceTree = "<group>"; };
+		52F454452BC7DAA4006392A8 /* MiFoneAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiFoneAudio.swift; sourceTree = "<group>"; };
+		52F454462BC7DAA4006392A8 /* MiFoneListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiFoneListener.swift; sourceTree = "<group>"; };
+		52F454472BC7DAA4006392A8 /* MiFoneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiFoneManager.swift; sourceTree = "<group>"; };
+		52F454482BC7DAA4006392A8 /* MiFoneRegistrationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiFoneRegistrationListener.swift; sourceTree = "<group>"; };
 		52F4544B2BC7DAA4006392A8 /* AttendedTransferSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttendedTransferSession.swift; sourceTree = "<group>"; };
 		52F4544C2BC7DAA4006392A8 /* CallInfoProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallInfoProvider.swift; sourceTree = "<group>"; };
 		52F4544D2BC7DAA4006392A8 /* Codec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Codec.swift; sourceTree = "<group>"; };
@@ -236,11 +262,10 @@
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		92A9DF9CA9C071F2A574ECAD /* Pods-VoipLibIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		99D0EAA0EBCD40A21157CF02 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		B035F51185C391CDDD985E90 /* Pods-VoipLibIOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS_Example.release.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C9FCAC026B9CEED2D1FD3B06 /* Pods-VoipLibIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS.debug.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS.debug.xcconfig"; sourceTree = "<group>"; };
-		E8CEC7B3327ED681A353193A /* Pods-VoipLibIOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS_Example.debug.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F91277AAF08A5A37DCCFFA1C /* Pods_VoipLibIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoipLibIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E71A459BA72784A3F8450BE /* Pods-VoipLibIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoipLibIOS.debug.xcconfig"; path = "Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		B910B3D7D8BE0814129E022F /* Pods_VoipLibIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoipLibIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB23165FC698CA07F66F9A79 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,7 +274,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34D81BD526BCE8624084B596 /* Pods_VoipLibIOS.framework in Frameworks */,
+				52EE201F2C3291FE00BE4777 /* bctoolbox-ios.xcframework in Frameworks */,
+				52EE20202C3291FE00BE4777 /* bctoolbox.xcframework in Frameworks */,
+				52EE20212C3291FE00BE4777 /* belcard.xcframework in Frameworks */,
+				52EE20222C3291FE00BE4777 /* belle-sip.xcframework in Frameworks */,
+				52EE20232C3291FE00BE4777 /* belr.xcframework in Frameworks */,
+				52EE20242C3291FE00BE4777 /* lime.xcframework in Frameworks */,
+				52EE20252C3291FE00BE4777 /* linphone.xcframework in Frameworks */,
+				52EE20262C3291FF00BE4777 /* linphonesw.xcframework in Frameworks */,
+				52EE20272C3291FF00BE4777 /* linphonetester.xcframework in Frameworks */,
+				52EE20282C3291FF00BE4777 /* mediastreamer2.xcframework in Frameworks */,
+				52EE20292C3291FF00BE4777 /* msamr.xcframework in Frameworks */,
+				52EE202A2C3291FF00BE4777 /* mscodec2.xcframework in Frameworks */,
+				52EE202B2C3291FF00BE4777 /* msopenh264.xcframework in Frameworks */,
+				52EE202C2C3291FF00BE4777 /* mssilk.xcframework in Frameworks */,
+				52EE202D2C3291FF00BE4777 /* mswebrtc.xcframework in Frameworks */,
+				52EE202E2C3291FF00BE4777 /* ortp.xcframework in Frameworks */,
+				52EE202F2C3291FF00BE4777 /* ZXing.xcframework in Frameworks */,
+				3D21A40B292CDA57636C1A0C /* Pods_VoipLibIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,63 +299,71 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52337FD52C05CA8800FD22AE /* ortp.xcframework in Frameworks */,
-				52337FD62C05CA8900FD22AE /* ZXing.xcframework in Frameworks */,
-				52337FCA2C05CA8800FD22AE /* belr.xcframework in Frameworks */,
-				52337FC72C05CA8800FD22AE /* bctoolbox.xcframework in Frameworks */,
-				52337FCD2C05CA8800FD22AE /* linphonesw.xcframework in Frameworks */,
-				52337FD12C05CA8800FD22AE /* mscodec2.xcframework in Frameworks */,
-				52337FD42C05CA8800FD22AE /* mswebrtc.xcframework in Frameworks */,
+				52EE20162C3259E500BE4777 /* linphonetester.xcframework in Frameworks */,
+				52EE201A2C3259E500BE4777 /* msopenh264.xcframework in Frameworks */,
+				52EE201C2C3259E500BE4777 /* mswebrtc.xcframework in Frameworks */,
+				52EE201B2C3259E500BE4777 /* mssilk.xcframework in Frameworks */,
+				52EE20132C3259E500BE4777 /* lime.xcframework in Frameworks */,
+				52EE20122C3259E500BE4777 /* belr.xcframework in Frameworks */,
+				52EE201E2C3259E500BE4777 /* ZXing.xcframework in Frameworks */,
+				52EE200F2C3259E500BE4777 /* bctoolbox.xcframework in Frameworks */,
+				52EE20142C3259E500BE4777 /* linphone.xcframework in Frameworks */,
 				52F454092BC7DA18006392A8 /* VoipLibIOS.framework in Frameworks */,
-				52337FD02C05CA8800FD22AE /* msamr.xcframework in Frameworks */,
-				C04B0AAD53EECBA98B43F798 /* Pods_VoipLibIOS_Example.framework in Frameworks */,
-				52337FC62C05CA8800FD22AE /* bctoolbox-ios.xcframework in Frameworks */,
-				52337FC82C05CA8800FD22AE /* belcard.xcframework in Frameworks */,
-				52337FCE2C05CA8800FD22AE /* linphonetester.xcframework in Frameworks */,
-				52337FCB2C05CA8800FD22AE /* lime.xcframework in Frameworks */,
-				52337FD22C05CA8800FD22AE /* msopenh264.xcframework in Frameworks */,
-				52337FD32C05CA8800FD22AE /* mssilk.xcframework in Frameworks */,
-				52337FC92C05CA8800FD22AE /* belle-sip.xcframework in Frameworks */,
-				52337FCF2C05CA8800FD22AE /* mediastreamer2.xcframework in Frameworks */,
-				52337FCC2C05CA8800FD22AE /* linphone.xcframework in Frameworks */,
+				52EE20172C3259E500BE4777 /* mediastreamer2.xcframework in Frameworks */,
+				52EE200E2C3259E500BE4777 /* bctoolbox-ios.xcframework in Frameworks */,
+				52EE20112C3259E500BE4777 /* belle-sip.xcframework in Frameworks */,
+				52EE20182C3259E500BE4777 /* msamr.xcframework in Frameworks */,
+				52EE20102C3259E500BE4777 /* belcard.xcframework in Frameworks */,
+				52EE201D2C3259E500BE4777 /* ortp.xcframework in Frameworks */,
+				52EE20192C3259E500BE4777 /* mscodec2.xcframework in Frameworks */,
+				52EE20152C3259E500BE4777 /* linphonesw.xcframework in Frameworks */,
+				C3EA23B3C67DE921A40DE4CF /* Pods_VoipLibIOS_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		149A5969AD50282EE68D8034 /* Frameworks */ = {
+		521314992C37D83300363AD3 /* HttpSession */ = {
 			isa = PBXGroup;
 			children = (
-				F91277AAF08A5A37DCCFFA1C /* Pods_VoipLibIOS.framework */,
-				11E74474C1B641F05790F4CE /* Pods_VoipLibIOS_Example.framework */,
+				5213149A2C37D85300363AD3 /* HttpClient.swift */,
+				5213149C2C37D99B00363AD3 /* Config.json */,
 			);
-			name = Frameworks;
+			path = HttpSession;
 			sourceTree = "<group>";
 		};
-		52337FC52C05CA8800FD22AE /* linphone-sdk-novideo-frameworks */ = {
+		52E308F92C3BE249006FC802 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				52337FB42C05CA8800FD22AE /* bctoolbox-ios.xcframework */,
-				52337FB52C05CA8800FD22AE /* bctoolbox.xcframework */,
-				52337FB62C05CA8800FD22AE /* belcard.xcframework */,
-				52337FB72C05CA8800FD22AE /* belle-sip.xcframework */,
-				52337FB82C05CA8800FD22AE /* belr.xcframework */,
-				52337FB92C05CA8800FD22AE /* lime.xcframework */,
-				52337FBA2C05CA8800FD22AE /* linphone.xcframework */,
-				52337FBB2C05CA8800FD22AE /* linphonesw.xcframework */,
-				52337FBC2C05CA8800FD22AE /* linphonetester.xcframework */,
-				52337FBD2C05CA8800FD22AE /* mediastreamer2.xcframework */,
-				52337FBE2C05CA8800FD22AE /* msamr.xcframework */,
-				52337FBF2C05CA8800FD22AE /* mscodec2.xcframework */,
-				52337FC02C05CA8800FD22AE /* msopenh264.xcframework */,
-				52337FC12C05CA8800FD22AE /* mssilk.xcframework */,
-				52337FC22C05CA8800FD22AE /* mswebrtc.xcframework */,
-				52337FC32C05CA8800FD22AE /* ortp.xcframework */,
-				52337FC42C05CA8800FD22AE /* ZXing.xcframework */,
+				52E308F82C3BE249006FC802 /* ParseString.swift */,
 			);
-			name = "linphone-sdk-novideo-frameworks";
-			path = "../linphone-sdk-novideo-frameworks";
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		52EE200D2C3259E500BE4777 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				52EE1FFC2C3259E500BE4777 /* bctoolbox-ios.xcframework */,
+				52EE1FFD2C3259E500BE4777 /* bctoolbox.xcframework */,
+				52EE1FFE2C3259E500BE4777 /* belcard.xcframework */,
+				52EE1FFF2C3259E500BE4777 /* belle-sip.xcframework */,
+				52EE20002C3259E500BE4777 /* belr.xcframework */,
+				52EE20012C3259E500BE4777 /* lime.xcframework */,
+				52EE20022C3259E500BE4777 /* linphone.xcframework */,
+				52EE20032C3259E500BE4777 /* linphonesw.xcframework */,
+				52EE20042C3259E500BE4777 /* linphonetester.xcframework */,
+				52EE20052C3259E500BE4777 /* mediastreamer2.xcframework */,
+				52EE20062C3259E500BE4777 /* msamr.xcframework */,
+				52EE20072C3259E500BE4777 /* mscodec2.xcframework */,
+				52EE20082C3259E500BE4777 /* msopenh264.xcframework */,
+				52EE20092C3259E500BE4777 /* mssilk.xcframework */,
+				52EE200A2C3259E500BE4777 /* mswebrtc.xcframework */,
+				52EE200B2C3259E500BE4777 /* ortp.xcframework */,
+				52EE200C2C3259E500BE4777 /* ZXing.xcframework */,
+			);
+			name = libs;
+			path = ../libs;
 			sourceTree = "<group>";
 		};
 		52F451E32BC79658006392A8 /* Supporting Files */ = {
@@ -432,6 +482,7 @@
 				52F454212BC7DAA4006392A8 /* ApplicationSetup.swift */,
 				52F454222BC7DAA4006392A8 /* Auth.swift */,
 				52F454232BC7DAA4006392A8 /* Preferences.swift */,
+				52EE20302C329EE800BE4777 /* OAuth.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -509,6 +560,8 @@
 		52F4543E2BC7DAA4006392A8 /* PIL */ = {
 			isa = PBXGroup;
 			children = (
+				52E308F92C3BE249006FC802 /* Utils */,
+				521314992C37D83300363AD3 /* HttpSession */,
 				52F454142BC7DAA4006392A8 /* Audio */,
 				52F454162BC7DAA4006392A8 /* CallKit */,
 				52F454202BC7DAA4006392A8 /* Calls */,
@@ -523,7 +576,7 @@
 				52F4543A2BC7DAA4006392A8 /* Push */,
 				52F4543B2BC7DAA4006392A8 /* Builder.swift */,
 				52F4543C2BC7DAA4006392A8 /* Localizable.stringsdict */,
-				52F4543D2BC7DAA4006392A8 /* PIL.swift */,
+				52F4543D2BC7DAA4006392A8 /* MFLib.swift */,
 			);
 			path = PIL;
 			sourceTree = "<group>";
@@ -552,21 +605,21 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		52F454492BC7DAA4006392A8 /* Linphone */ = {
+		52F454492BC7DAA4006392A8 /* MiFoneCore */ = {
 			isa = PBXGroup;
 			children = (
-				52F454452BC7DAA4006392A8 /* LinphoneAudio.swift */,
-				52F454462BC7DAA4006392A8 /* LinphoneListener.swift */,
-				52F454472BC7DAA4006392A8 /* LinphoneManager.swift */,
-				52F454482BC7DAA4006392A8 /* LinphoneRegistrationListener.swift */,
+				52F454452BC7DAA4006392A8 /* MiFoneAudio.swift */,
+				52F454462BC7DAA4006392A8 /* MiFoneListener.swift */,
+				52F454472BC7DAA4006392A8 /* MiFoneManager.swift */,
+				52F454482BC7DAA4006392A8 /* MiFoneRegistrationListener.swift */,
 			);
-			path = Linphone;
+			path = MiFoneCore;
 			sourceTree = "<group>";
 		};
 		52F4544A2BC7DAA4006392A8 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				52F454492BC7DAA4006392A8 /* Linphone */,
+				52F454492BC7DAA4006392A8 /* MiFoneCore */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -640,7 +693,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				52337FC52C05CA8800FD22AE /* linphone-sdk-novideo-frameworks */,
+				52EE200D2C3259E500BE4777 /* libs */,
 				52F453F02BC7DA02006392A8 /* VoipLibIOS */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for VoipLibIOS */,
@@ -649,7 +702,7 @@
 				52F454032BC7DA18006392A8 /* VoipLibIOSTests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				7750EA648EFBA2EEA1BD1B33 /* Pods */,
-				149A5969AD50282EE68D8034 /* Frameworks */,
+				EBA99EC9CC84DED2E303E02D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -708,12 +761,21 @@
 		7750EA648EFBA2EEA1BD1B33 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C9FCAC026B9CEED2D1FD3B06 /* Pods-VoipLibIOS.debug.xcconfig */,
-				29BD07351C250EB1E73BCD97 /* Pods-VoipLibIOS.release.xcconfig */,
-				E8CEC7B3327ED681A353193A /* Pods-VoipLibIOS_Example.debug.xcconfig */,
-				B035F51185C391CDDD985E90 /* Pods-VoipLibIOS_Example.release.xcconfig */,
+				9E71A459BA72784A3F8450BE /* Pods-VoipLibIOS.debug.xcconfig */,
+				30EF98BBAC15045912EC4EC2 /* Pods-VoipLibIOS.release.xcconfig */,
+				92A9DF9CA9C071F2A574ECAD /* Pods-VoipLibIOS_Example.debug.xcconfig */,
+				34D73C7ECB1D2AA448089475 /* Pods-VoipLibIOS_Example.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		EBA99EC9CC84DED2E303E02D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B910B3D7D8BE0814129E022F /* Pods_VoipLibIOS.framework */,
+				30C2A19A98854AA49243A1A2 /* Pods_VoipLibIOS_Example.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -733,11 +795,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52F4540B2BC7DA18006392A8 /* Build configuration list for PBXNativeTarget "VoipLibIOS" */;
 			buildPhases = (
-				729216CD4D1404AA0F1E7858 /* [CP] Check Pods Manifest.lock */,
+				2ACEC403F14578AB5F6159F5 /* [CP] Check Pods Manifest.lock */,
 				52F453F12BC7DA17006392A8 /* Headers */,
 				52F453F22BC7DA17006392A8 /* Sources */,
 				52F453F32BC7DA17006392A8 /* Frameworks */,
 				52F453F42BC7DA17006392A8 /* Resources */,
+				95047F66E44DE8CCDB4938CD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -752,13 +815,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "VoipLibIOS_Example" */;
 			buildPhases = (
-				1469742AD8AF2D7B50E88284 /* [CP] Check Pods Manifest.lock */,
+				1E68BEDDD20A3B29F33C292E /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				52A6DC6B2BC6A7A3004F0D08 /* Embed Frameworks */,
-				D1BD5A852DF17E977763F54E /* [CP] Embed Pods Frameworks */,
-				9E3443CC3348FBD3080BE4F5 /* [CP] Copy Pods Resources */,
+				BD2FDEC49257345C34123BF0 /* [CP] Embed Pods Frameworks */,
+				AA99EB879561E5893AEFEB4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -822,6 +885,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5213149F2C37DA8E00363AD3 /* Config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,7 +908,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1469742AD8AF2D7B50E88284 /* [CP] Check Pods Manifest.lock */ = {
+		1E68BEDDD20A3B29F33C292E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -860,6 +924,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-VoipLibIOS_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2ACEC403F14578AB5F6159F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoipLibIOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -884,40 +970,38 @@
 			shellPath = /bin/sh;
 			shellScript = "# Remove current frameworks\nrm -r linphone-sdk-novideo-frameworks/\n# Copy existing depedencies of linphone to frameworks to be included in pod\ncp -r Pods/linphone-sdk-novideo/linphone-sdk-novideo/apple-darwin/XCFrameworks/ linphone-sdk-novideo-frameworks/\n\n# Export linphonesw for device\nxcodebuild archive \\\n-workspace VoipLibIOS.xcworkspace \\\n-scheme linphone-sdk-novideo \\\n-configuration Release \\\n-sdk iphoneos \\\n-archivePath archives/ios_devices.xcarchive \\\nBUILD_LIBRARY_FOR_DISTRIBUTION=YES \\\nSKIP_INSTALL=NO \\\n\n# Export linphonesw for simulator\nxcodebuild archive \\\n-workspace VoipLibIOS.xcworkspace \\\n-scheme linphone-sdk-novideo \\\n-configuration Debug \\\n-sdk iphonesimulator \\\n-archivePath archives/ios_simulators.xcarchive \\\nBUILD_LIBRARY_FOR_DISTRIBUTION=YES \\\nSKIP_INSTALL=NO \\\n\n# Combine both linphonesw frameworks to XCFramework\nxcodebuild \\\n-create-xcframework \\\n-framework archives/ios_devices.xcarchive/Products/Library/Frameworks/linphonesw.framework \\\n-framework archives/ios_simulators.xcarchive/Products/Library/Frameworks/linphonesw.framework \\\n-output linphone-sdk-novideo-frameworks/linphonesw.xcframework\n\n# Remove archives\nrm -rf archives\n";
 		};
-		729216CD4D1404AA0F1E7858 /* [CP] Check Pods Manifest.lock */ = {
+		95047F66E44DE8CCDB4938CD /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${PODS_ROOT}/Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Swinject/Swinject.bundle",
 			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VoipLibIOS-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Swinject.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoipLibIOS/Pods-VoipLibIOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9E3443CC3348FBD3080BE4F5 /* [CP] Copy Pods Resources */ = {
+		AA99EB879561E5893AEFEB4B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Swinject/Swinject.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.bundle",
 				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Swinject.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Alamofire.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
 			);
@@ -926,7 +1010,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VoipLibIOS_Example/Pods-VoipLibIOS_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D1BD5A852DF17E977763F54E /* [CP] Embed Pods Frameworks */ = {
+		BD2FDEC49257345C34123BF0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -991,19 +1075,21 @@
 				52F454CF2BC7E0BE006392A8 /* Middleware.swift in Sources */,
 				52F454D02BC7E0BE006392A8 /* PushKitDelegate.swift in Sources */,
 				52F454D12BC7E0BE006392A8 /* Builder.swift in Sources */,
-				52F454D22BC7E0BE006392A8 /* PIL.swift in Sources */,
+				52F454D22BC7E0BE006392A8 /* MFLib.swift in Sources */,
 				52F454A22BC7E0B0006392A8 /* VoIPLibConfig.swift in Sources */,
 				52F454A32BC7E0B0006392A8 /* InitializationError.swift in Sources */,
-				52F454A42BC7E0B0006392A8 /* LinphoneAudio.swift in Sources */,
-				52F454A52BC7E0B0006392A8 /* LinphoneListener.swift in Sources */,
-				52F454A62BC7E0B0006392A8 /* LinphoneManager.swift in Sources */,
-				52F454A72BC7E0B0006392A8 /* LinphoneRegistrationListener.swift in Sources */,
+				52F454A42BC7E0B0006392A8 /* MiFoneAudio.swift in Sources */,
+				52F454A52BC7E0B0006392A8 /* MiFoneListener.swift in Sources */,
+				52F454A62BC7E0B0006392A8 /* MiFoneManager.swift in Sources */,
+				52F454A72BC7E0B0006392A8 /* MiFoneRegistrationListener.swift in Sources */,
 				52F454A82BC7E0B0006392A8 /* AttendedTransferSession.swift in Sources */,
 				52F454A92BC7E0B0006392A8 /* CallInfoProvider.swift in Sources */,
 				52F454AA2BC7E0B0006392A8 /* Codec.swift in Sources */,
 				52F454AB2BC7E0B0006392A8 /* Direction.swift in Sources */,
+				522BB9572C36492B00483DAA /* OAuth.swift in Sources */,
 				52F454AC2BC7E0B0006392A8 /* Quality.swift in Sources */,
 				52F454AD2BC7E0B0006392A8 /* VoIPLibCall.swift in Sources */,
+				52E308FA2C3BE249006FC802 /* ParseString.swift in Sources */,
 				52F454AE2BC7E0B0006392A8 /* VoIPLibCallState.swift in Sources */,
 				52F454AF2BC7E0B0006392A8 /* CallDelegate.swift in Sources */,
 				52F454B02BC7E0B0006392A8 /* RegistrationState.swift in Sources */,
@@ -1027,6 +1113,7 @@
 				52F454C22BC7E0B0006392A8 /* Preferences.swift in Sources */,
 				52F454C32BC7E0B0006392A8 /* Contacts.swift in Sources */,
 				52F454C42BC7E0B0006392A8 /* SupplementaryContact.swift in Sources */,
+				5213149E2C37DA8B00363AD3 /* HttpClient.swift in Sources */,
 				52F454C52BC7E0B0006392A8 /* Container.swift in Sources */,
 				52F454C62BC7E0B0006392A8 /* Event.swift in Sources */,
 				52F454C72BC7E0B0006392A8 /* EventsManager.swift in Sources */,
@@ -1094,7 +1181,7 @@
 		};
 		52F4540C2BC7DA18006392A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9FCAC026B9CEED2D1FD3B06 /* Pods-VoipLibIOS.debug.xcconfig */;
+			baseConfigurationReference = 9E71A459BA72784A3F8450BE /* Pods-VoipLibIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -1116,7 +1203,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 CocoaPods. All rights reserved.";
@@ -1149,7 +1236,7 @@
 		};
 		52F4540D2BC7DA18006392A8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 29BD07351C250EB1E73BCD97 /* Pods-VoipLibIOS.release.xcconfig */;
+			baseConfigurationReference = 30EF98BBAC15045912EC4EC2 /* Pods-VoipLibIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
@@ -1170,7 +1257,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 CocoaPods. All rights reserved.";
@@ -1301,7 +1388,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8CEC7B3327ED681A353193A /* Pods-VoipLibIOS_Example.debug.xcconfig */;
+			baseConfigurationReference = 92A9DF9CA9C071F2A574ECAD /* Pods-VoipLibIOS_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1325,7 +1412,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B035F51185C391CDDD985E90 /* Pods-VoipLibIOS_Example.release.xcconfig */;
+			baseConfigurationReference = 34D73C7ECB1D2AA448089475 /* Pods-VoipLibIOS_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

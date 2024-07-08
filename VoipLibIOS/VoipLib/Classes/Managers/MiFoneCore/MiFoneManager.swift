@@ -2,24 +2,24 @@ import Foundation
 import linphonesw
 import AVFoundation
 
-typealias LinphoneCall = linphonesw.Call
+typealias MiFoneCall = linphonesw.Call
 public typealias RegistrationCallback = (RegistrationState) -> Void
-typealias LinphoneLogLevel = linphonesw.LogLevel
+typealias MiFoneLogLevel = linphonesw.LogLevel
 
-class LinphoneManager: linphonesw.LoggingServiceDelegate {
+class MiFoneManager: linphonesw.LoggingServiceDelegate {
    
     private(set) var config: VoIPLibConfig?
     var isInitialized: Bool {
-        linphoneCore != nil
+        mifoneCore != nil
     }
     
-    internal var linphoneCore: Core!
-    private lazy var linphoneListener = { LinphoneListener(manager: self) }()
-    private lazy var registrationListener = { LinphoneRegistrationListener(manager: self) }()
-    internal lazy var linphoneAudio = { LinphoneAudio(manager: self) }()
+    internal var mifoneCore: Core!
+    private lazy var mifoneListener = { MiFoneListener(manager: self) }()
+    private lazy var registrationListener = { MiFoneRegistrationListener(manager: self) }()
+    internal lazy var mifoneAudio = { MiFoneAudio(manager: self) }()
     
     var isMicrophoneMuted: Bool {
-        return !linphoneCore.micEnabled
+        return !mifoneCore.micEnabled
     }
     
     /**
@@ -33,33 +33,34 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
     }
     
     init() {
-        registrationListener = LinphoneRegistrationListener(manager: self)
-        linphoneListener = LinphoneListener(manager: self)
+        registrationListener = MiFoneRegistrationListener(manager: self)
+        mifoneListener = MiFoneListener(manager: self)
     }
     
     func initialize(config: VoIPLibConfig) -> Bool {
         self.config = config
 
         if isInitialized {
-            log("Linphone already init")
+            log("MiFone already init")
             return true
         }
 
         do {
-            try startLinphone()
+            try startMF()
             return true
         } catch {
-            log("Failed to start Linphone \(error.localizedDescription)")
-            linphoneCore = nil
+            log("Failed to start MiFone \(error.localizedDescription)")
+            mifoneCore = nil
             return false
         }
     }
     
-    private func startLinphone() throws {
+    private func startMF() throws {
         LoggingService.Instance.logLevel = .Debug
-        linphoneCore = try Factory.Instance.createCore(configPath: "", factoryConfigPath: "", systemContext: nil)
-        linphoneCore.addDelegate(delegate: linphoneListener)
-        try linphoneCore.start()
+        mifoneCore = try Factory.Instance.createCore(configPath: "", factoryConfigPath: "", systemContext: nil)
+        mifoneCore.addDelegate(delegate: mifoneListener)
+        try mifoneCore.start()
+
     }
 
     private func applyPreStartConfiguration(core: Core) throws {
@@ -86,15 +87,15 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
         core.avpfMode = AVPFMode.Disabled
         core.audioJittcomp = 100
         
-        if let transports = linphoneCore.transports {
+        if let transports = mifoneCore.transports {
             transports.tlsPort = -1
             transports.udpPort = 0
             transports.tcpPort = 0
-            try linphoneCore.setTransports(newValue: transports)
+            try mifoneCore.setTransports(newValue: transports)
         }
 
-        try linphoneCore.setMediaencryption(newValue: MediaEncryption.SRTP)
-        linphoneCore.mediaEncryptionMandatory = true
+        try mifoneCore.setMediaencryption(newValue: MediaEncryption.SRTP)
+        mifoneCore.mediaEncryptionMandatory = true
     }
     
     func applyPostStartConfiguration(core: Core) {
@@ -124,22 +125,24 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
                 unregister()
             }
 
-            linphoneCore.removeDelegate(delegate: self.registrationListener)
-            linphoneCore.addDelegate(delegate: self.registrationListener)
+            mifoneCore.removeDelegate(delegate: self.registrationListener)
+            mifoneCore.addDelegate(delegate: self.registrationListener)
 
             self.registrationCallbacks.append(callback)
 
-            if (!linphoneCore.accountList.isEmpty) {
+            if (!mifoneCore.accountList.isEmpty) {
                 log("We are already registered, refreshing registration.")
-                linphoneCore.refreshRegisters()
+                mifoneCore.refreshRegisters()
                 return
             }
             
             log("No valid registrations, registering for the first time.")
             
             initSipAccount(ext: auth.username, password: auth.password, domain: auth.domain, proxy: auth.proxy, port: auth.port.description, transportType: auth.transport)
+
+
         } catch (let error) {
-            log("Linphone registration failed: \(error)")
+            log("MiFone registration failed: \(error)")
             callback(.failed)
         }
     }
@@ -149,7 +152,7 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
             let authInfo = try Factory.Instance.createAuthInfo(username: ext, userid: "", passwd: password, ha1: "", realm: "", domain: domain)
             // Account object replaces deprecated ProxyConfig object
             // Account object is configured through an AccountParams object that we can obtain from the Core
-            let accountParams = try linphoneCore.createAccountParams()
+            let accountParams = try mifoneCore.createAccountParams()
             
             // A SIP account is identified by an identity address that we can construct from the username and domain
             let identity = try Factory.Instance.createAddress(addr: String("sip:" + ext + "@" + domain))
@@ -169,14 +172,14 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
             accountParams.registerEnabled = true
             
             // Now that our AccountParams is configured, we can create the Account object
-            let account = try linphoneCore.createAccount(params: accountParams)
+            let account = try mifoneCore.createAccount(params: accountParams)
             
             // Now let's add our objects to the Core
-            linphoneCore.addAuthInfo(info: authInfo)
-            try linphoneCore.addAccount(account: account)
+            mifoneCore.addAuthInfo(info: authInfo)
+            try mifoneCore.addAccount(account: account)
             
             // Also set the newly added account as default
-            linphoneCore.defaultAccount = account
+            mifoneCore.defaultAccount = account
         } catch {
             NSLog(error.localizedDescription)
         }
@@ -195,9 +198,9 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
 
     private func createAccount(core: Core, auth: Auth) throws -> Account {
         let params = try core.createAccountParams()
-        
-        let identityUrl = "sip:\(auth.username)@\(auth.domain)"
-        guard let identityAddress = core.interpretUrl(url: identityUrl) else {
+                
+        let identityUrl = "sip:\(auth.username)@\(auth.domain):\(auth.port)"
+        guard let identityAddress = core.interpretUrl(url: identityUrl, applyInternationalPrefix: false) else {
             log("Unable to create account, failed to interpret identity URL: \(identityUrl)", level: .error)
             throw InitializationError.noConfigurationProvided
             }
@@ -205,25 +208,25 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
         
         params.registerEnabled = true
         
-        let serverUrl = "sip:\(auth.proxy):\(auth.port);transport=tls"
-        guard let serverAddress = core.interpretUrl(url: serverUrl) else {
+        let serverUrl = "sip:\(auth.domain);transport=tls"
+        guard let serverAddress = core.interpretUrl(url: serverUrl, applyInternationalPrefix: false) else {
             log("Unable to create account, failed to interpret server URL: \(serverUrl)", level: .error)
             throw InitializationError.noConfigurationProvided
         }
         try params.setServeraddress(newValue: serverAddress)
         
-        return try linphoneCore.createAccount(params: params)
+        return try mifoneCore.createAccount(params: params)
     }
     
     func unregister() {
-        linphoneCore.clearAccounts()
-        linphoneCore.clearAllAuthInfo()
+        mifoneCore.clearAccounts()
+        mifoneCore.clearAllAuthInfo()
         log("Unregister complete")
     }
 
     func terminateAllCalls() {
         do {
-           try linphoneCore.terminateAllCalls()
+           try mifoneCore.terminateAllCalls()
         } catch {
             
         }
@@ -231,7 +234,8 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
     
     func call(to number: String) -> VoIPLibCall? {
         do {
-            linphoneCore.configureAudioSession()
+            print("MAKE CALL OUT:   \(number)")
+            mifoneCore.configureAudioSession()
             let domain: String? = pil.auth!.domain
             if (domain == nil) {
                 NSLog("Can't create sip uri")
@@ -242,14 +246,14 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
 
             // We also need a CallParams object
             // Create call params expects a Call object for incoming calls, but for outgoing we must use null safely
-            let params = try linphoneCore.createCallParams(call: nil)
+            let params = try mifoneCore.createCallParams(call: nil)
 
             // We can now configure it
             // Here we ask for no encryption but we could ask for ZRTP/SRTP/DTLS
             params.mediaEncryption = MediaEncryption.None
-            let call = linphoneCore.inviteAddressWithParams(addr: remoteAddress, params: params)
+            let call = mifoneCore.inviteAddressWithParams(addr: remoteAddress, params: params)
 
-            return VoIPLibCall(linphoneCall: call!)
+            return VoIPLibCall(mifoneCall: call!)
         } catch (let error) {
             log("Transfer failed: \(error)")
             return nil
@@ -260,7 +264,7 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
     
     func acceptCall(for call: VoIPLibCall) -> Bool {
         do {
-            try call.linphoneCall.accept()
+            try call.mifoneCall.accept()
             return true
         } catch {
             return false
@@ -269,7 +273,7 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
     
     func endCall(for call: VoIPLibCall) -> Bool {
         do {
-            try call.linphoneCall.terminate()
+            try call.mifoneCall.terminate()
             return true
         } catch {
             return false
@@ -279,11 +283,11 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
     private func configureCodecs(core: Core) {
         let codecs = [Codec.PCMU]
         
-        linphoneCore?.videoPayloadTypes.forEach { payload in
+        mifoneCore?.videoPayloadTypes.forEach { payload in
             _ = payload.enable(enabled: false)
         }
         
-        linphoneCore?.audioPayloadTypes.forEach { payload in
+        mifoneCore?.audioPayloadTypes.forEach { payload in
             let enable = !codecs.filter { selectedCodec in
                 selectedCodec.rawValue.uppercased() == payload.mimeType.uppercased()
             }.isEmpty
@@ -291,7 +295,7 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
             _ = payload.enable(enabled: enable)
         }
         
-        guard let enabled = linphoneCore?.audioPayloadTypes.filter({ payload in payload.enabled() }).map({ payload in payload.mimeType }).joined(separator: ", ") else {
+        guard let enabled = mifoneCore?.audioPayloadTypes.filter({ payload in payload.enabled() }).map({ payload in payload.mimeType }).joined(separator: ", ") else {
             log("Unable to log codecs, no core")
             return
         }
@@ -301,12 +305,12 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
 
     
     func setMicrophone(muted: Bool) {
-        linphoneCore.micEnabled = !muted
+        mifoneCore.micEnabled = !muted
     }
     
     func setAudio(enabled:Bool) {
-        log("Linphone set audio: \(enabled)")
-        linphoneCore.activateAudioSession(actived: enabled)
+        log("MiFone set audio: \(enabled)")
+        mifoneCore.activateAudioSession(actived: enabled)
     }
     
     func setHold(call: VoIPLibCall, onHold hold:Bool) -> Bool {
@@ -326,7 +330,7 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
     
     func transfer(call: VoIPLibCall, to number: String) -> Bool {
         do {
-            try call.linphoneCall.transferTo(referTo: linphoneCore.createAddress(address: number))
+            try call.mifoneCall.transferTo(referTo: mifoneCore.createAddress(address: number))
             log("Transfer was successful")
             return true
         } catch (let error) {
@@ -346,7 +350,7 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
     
     func finishAttendedTransfer(attendedTransferSession: AttendedTransferSession) -> Bool {
         do {
-            try attendedTransferSession.from.linphoneCall.transferToAnother(dest: attendedTransferSession.to.linphoneCall)
+            try attendedTransferSession.from.mifoneCall.transferToAnother(dest: attendedTransferSession.to.mifoneCall)
             log("Transfer was successful")
             return true
         } catch (let error) {
@@ -357,7 +361,7 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
     
     func sendDtmf(call: VoIPLibCall, dtmf: String) {
         do {
-            try call.linphoneCall.sendDtmfs(dtmfs: dtmf)
+            try call.mifoneCall.sendDtmfs(dtmfs: dtmf)
         } catch (let error) {
             log("Sending dtmf failed: \(error)")
             return
@@ -373,7 +377,7 @@ class LinphoneManager: linphonesw.LoggingServiceDelegate {
     }
     
     internal func refreshRegistration() {
-        linphoneCore.refreshRegisters()
+        mifoneCore.refreshRegisters()
     }
     
     private var ringbackPath: String {

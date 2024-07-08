@@ -10,6 +10,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'VoipLibIOS' do
   pod 'Swinject'
   pod 'linphone-sdk-novideo', '5.2.112'
+  # pod 'linphone-sdk', :path => '../SDK/'
 end
 
 target 'VoipLibIOS_Example' do

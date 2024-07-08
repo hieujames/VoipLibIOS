@@ -15,23 +15,8 @@ final class SettingsViewController: QuickTableViewController {
         tableContents = [
 
             Section(title: "Authentication", rows: [
-                NavigationRow(text: "Username", detailText: .subtitle(userDefault(key: "username")), action: { [weak self] in self?.promptUserWithTextField(row: $0, title: "Username", key: "username") }),
-                NavigationRow(text: "Password", detailText: .subtitle(userDefault(key: "password")), action: { [weak self] in self?.promptUserWithTextField(row: $0, title: "Password", key: "password") }),
-                NavigationRow(text: "Domain", detailText: .subtitle(userDefault(key: "domain")), action: { [weak self] in self?.promptUserWithTextField(row: $0, title: "Domain", key: "domain") }),
-                NavigationRow(text: "Port", detailText: .subtitle(userDefault(key: "port")), action: { [weak self] in self?.promptUserWithTextField(row: $0, title: "Port", key: "port") }),
-                NavigationRow(text: "Proxy", detailText: .subtitle(userDefault(key: "proxy")), action: { [weak self] in self?.promptUserWithTextField(row: $0, title: "Proxy", key: "proxy") }),
-                NavigationRow(text: "Transport", detailText: .subtitle(userDefault(key: "transport")), action: { [weak self] in self?.promptUserWithTextField(row: $0, title: "Transport", key: "transport") }),
                 TapActionRow(text: "Authentication", action: { row in
                     let pil = MFLib.shared!
-                    pil.auth = Auth(
-                        username: self.userDefault(key: "username"),
-                        password: self.userDefault(key: "password"),
-                        domain: self.userDefault(key: "domain"),
-                        proxy: self.userDefault(key: "proxy"),
-                        transport: self.userDefault(key: "transport"),
-                        port: Int(self.userDefault(key: "port")) ?? 0,
-                        secure: self.defaults.bool(forKey: "encryption")
-                    )
                     pil.performRegistrationCheck { (success) in
                         DispatchQueue.main.async {
                             let alert = UIAlertController(title: "Authentication Test", message: success ? "Authenticated successfully!" : "Authentication failed :(", preferredStyle: .alert)
@@ -40,65 +25,6 @@ final class SettingsViewController: QuickTableViewController {
                         }
                     }
                 })
-            ]),
-
-            Section(title: "Authorize", rows: [
-                NavigationRow(text: "Username", detailText: .subtitle(userDefault(key: "voipgrid_username")), action: { [weak self] in self?.promptUserWithTextField(row: $0, title: "Username", key: "voipgrid_username") }),
-                NavigationRow(text: "Password", detailText: .subtitle(userDefault(key: "voipgrid_password")), icon: .named("gear"), action: { [weak self] in self?.promptUserWithTextField(row: $0, title: "Password", key: "voipgrid_password") }),
-                
-                NavigationRow(text: "VoIPGRID Token", detailText: .subtitle(userDefault(key: "voipgrid_api_token")), action: nil),
-                NavigationRow(text: "Push Kit Token", detailText: .subtitle(userDefault(key: "push_kit_token")), action: nil),
-                TapActionRow(text: "Register with Account", action: { row in
-                    let voipgridLogin = VoIPGRIDLogin()
-                    voipgridLogin.login { apiToken in
-                        print("[API_TOKEN]  \(apiToken)")
-                        if let pil = MFLib.shared {
-                            if let tripleEncodedToken = pil.decodeTokenThreeTimes(apiToken!) {
-                                print("[RETURN] Token đã mã hóa 3 lần: \(tripleEncodedToken)")
-                                
-                                let slicedStrings = pil.sliceStringWithKeyVoid(tripleEncodedToken, key: "b6aed9ab7cdf85432c321757b4d48153")
-                                print("[RETURN] Chuỗi đã cắt: \(slicedStrings)")
-                                
-                                var decodedParts: [String] = []
-                                for part in slicedStrings {
-                                    if let decodedPart = pil.base64Decode(part) {
-                                        decodedParts.append(decodedPart)
-                                    } else {
-                                        print("[RETURN] Giải mã thất bại cho phần tử: \(part)")
-                                    }
-                                }
-                                
-                                print("[RETURN] Các phần tử đã giải mã: \(decodedParts)")
-                                
-                                for (index, part) in decodedParts.enumerated() {
-                                    print("[RETURN] Phần tử \(index): \(part)")
-                                    pil.auth = Auth(
-                                        username: decodedParts[3].description,
-                                        password: decodedParts[4].description,
-                                        domain: decodedParts[0].description,
-                                        proxy: decodedParts[2].description,
-                                        transport: decodedParts[5].description,
-                                        port: Int(decodedParts[1].description) ?? 0,
-                                        secure: self.defaults.bool(forKey: "encryption")
-                                    )
-                                    pil.performRegistrationCheck { (success) in
-                                        DispatchQueue.main.async {
-                                            let alert = UIAlertController(title: "Authentication Test", message: success ? "Authenticated successfully!" : "Authentication failed :(", preferredStyle: .alert)
-                                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                                            self.present(alert, animated: true)
-                                        }
-                                    }
-                                }
-                                
-                            } else {
-                                print("[RETURN] Mã hóa thất bại")
-                            }
-                        }
-                    
-                    }
-                    
-                }),
-                
             ]),
             
             Section(title: "Preferences", rows: [
@@ -151,32 +77,32 @@ final class SettingsViewController: QuickTableViewController {
                 return
             }
             print("[API_TOKEN]  \(apiToken)")
-            if let pil = MFLib.shared {
-                if let tripleEncodedToken = pil.decodeTokenThreeTimes(apiToken) {
-                    print("[RETURN] Token đã mã hóa 3 lần: \(tripleEncodedToken)")
-                    
-                    let slicedStrings = pil.sliceStringWithKeyVoid(tripleEncodedToken, key: "b6aed9ab7cdf85432c321757b4d48153")
-                    print("[RETURN] Chuỗi đã cắt: \(slicedStrings)")
-                    
-                    var decodedParts: [String] = []
-                    for part in slicedStrings {
-                        if let decodedPart = pil.base64Decode(part) {
-                            decodedParts.append(decodedPart)
-                        } else {
-                            print("[RETURN] Giải mã thất bại cho phần tử: \(part)")
-                        }
-                    }
-                    
-                    print("[RETURN] Các phần tử đã giải mã: \(decodedParts)")
-                    
-                    for (index, part) in decodedParts.enumerated() {
-                        print("[RETURN] Phần tử \(index): \(part)")
-                    }
-                    
-                } else {
-                    print("[RETURN] Mã hóa thất bại")
-                }
-            }
+//            if let pil = MFLib.shared {
+//                if let tripleEncodedToken = pil.decodeTokenThreeTimes(apiToken) {
+//                    print("[RETURN] Token đã mã hóa 3 lần: \(tripleEncodedToken)")
+//                    
+//                    let slicedStrings = pil.sliceStringWithKeyVoid(tripleEncodedToken, key: "b6aed9ab7cdf85432c321757b4d48153")
+//                    print("[RETURN] Chuỗi đã cắt: \(slicedStrings)")
+//                    
+//                    var decodedParts: [String] = []
+//                    for part in slicedStrings {
+//                        if let decodedPart = pil.base64Decode(part) {
+//                            decodedParts.append(decodedPart)
+//                        } else {
+//                            print("[RETURN] Giải mã thất bại cho phần tử: \(part)")
+//                        }
+//                    }
+//                    
+//                    print("[RETURN] Các phần tử đã giải mã: \(decodedParts)")
+//                    
+//                    for (index, part) in decodedParts.enumerated() {
+//                        print("[RETURN] Phần tử \(index): \(part)")
+//                    }
+//                    
+//                } else {
+//                    print("[RETURN] Mã hóa thất bại")
+//                }
+//            }
             
             UserDefaults.standard.set(apiToken, forKey: "voipgrid_api_token")
             completion(apiToken)
