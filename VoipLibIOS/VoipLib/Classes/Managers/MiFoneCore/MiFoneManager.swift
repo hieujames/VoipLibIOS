@@ -56,7 +56,8 @@ class MiFoneManager: linphonesw.LoggingServiceDelegate {
     }
     
     private func startMF() throws {
-        LoggingService.Instance.logLevel = .Debug
+        /* LoggingService.Instance.logLevel = .Debug */
+        // LoggingService.Instance.logLevel = .Debug
         mifoneCore = try Factory.Instance.createCore(configPath: "", factoryConfigPath: "", systemContext: nil)
         mifoneCore.addDelegate(delegate: mifoneListener)
         try mifoneCore.start()
@@ -160,9 +161,9 @@ class MiFoneManager: linphonesw.LoggingServiceDelegate {
             
             // We also need to configure where the proxy server is located
             let address = try Factory.Instance.createAddress(addr: String("sip:" + proxy + ":" + port))
-            if(transportType == "tls"){
+            if(transportType == "TLS"){
                 try address.setTransport(newValue: TransportType.Tls)
-            }else if (transportType == "tcp"){
+            }else if (transportType == "TCP"){
                 try address.setTransport(newValue: TransportType.Udp)
             }else {
                 try address.setTransport(newValue: TransportType.Tcp)
@@ -170,6 +171,8 @@ class MiFoneManager: linphonesw.LoggingServiceDelegate {
             try accountParams.setServeraddress(newValue: address)
             accountParams.outboundProxyEnabled = true
             accountParams.registerEnabled = true
+            
+            /* print("[AUTH] extension:\(ext)  password:\(password)  domain:\(domain)  proxy:\(proxy)  transport:\(transportType)  identity:\(identity)  address:\(address.asStringUriOnly())") */
             
             // Now that our AccountParams is configured, we can create the Account object
             let account = try mifoneCore.createAccount(params: accountParams)

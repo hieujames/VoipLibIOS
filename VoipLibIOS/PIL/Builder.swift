@@ -87,9 +87,6 @@ public func startIOSPIL(applicationSetup: ApplicationSetup, oauth: OAuth? = nil,
 private func fetchUserInfo(oauth: OAuth, completion: @escaping (Auth?) -> Void) {
     var authIndex: [String] = []
     
-    print("[LICENCE_KEY]  \(String(describing: oauth.licencesKey))")
-    print("[ACCESS_TOKEN]  \(String(describing: oauth.accessToken))")
-    
     let params = ["mi_token": oauth.accessToken]
     HttpClient.shared.postRequest(urlString: "https://api-prod.mipbx.vn/api/v1/mifone/sdk/authen", params: params as [String : Any]) { result in
         switch result {
@@ -103,38 +100,28 @@ private func fetchUserInfo(oauth: OAuth, completion: @escaping (Auth?) -> Void) 
                         return
                     }
                     if let tripleDecodedToken = ParseString.shared.decodeTokenThreeTimes(stringValue) {
-                        print("[RETURN] Token đã mã hóa 3 lần: \(tripleDecodedToken)")
+                        // print("[RETURN] \(tripleDecodedToken)")
                         let slicedStrings = ParseString.shared.sliceStringWithKeyVoid(tripleDecodedToken, key: stringKey)
-                        print("[RETURN] sliceStringWithKeyVoid: \(slicedStrings)")
+                        // print("[RETURN] \(slicedStrings)")
                         for part in slicedStrings {
                             if let decodedPart = ParseString.shared.base64Decode(part) {
                                 authIndex.append(decodedPart)
                             } else {
-                                print("[RETURN] Giải mã thất bại cho phần tử: \(part)")
+                                print("[ERROR] \(part)")
                             }
                         }
                         
                         if authIndex.count >= 6 {
-//                            let auth = Auth(
-//                                username: decodedParts[3].description,
-//                                password: decodedParts[4].description,
-//                                domain: decodedParts[0].description,
-//                                proxy: decodedParts[2].description,
-//                                transport: decodedParts[5].description,
-//                                port: 5567,
-//                                secure: true
-//                            )
-                            
                             let auth = Auth(
-                                username: "8007",
-                                password: "f047a4946620e0782e805893a39c7a23",
-                                domain: "pbx57.mipbx.vn",
-                                proxy: "sipproxy01-2020.mipbx.vn",
-                                transport: "tls",
-                                port: 5567,
+                                username: authIndex[3].description,
+                                password: authIndex[4].description,
+                                domain: authIndex[0].description,
+                                proxy: authIndex[2].description,
+                                transport: authIndex[5].description,
+                                port: Int(authIndex[1]) ?? 5567,
+                                // port: 5567,
                                 secure: true
                             )
-                            print("[AUTH] extension:\(auth.username)  password:\(auth.password)  domain:\(auth.domain)  proxy:\(auth.proxy)  transport:\(auth.transport)")
                             completion(auth)
                         } else {
                             completion(nil)
@@ -153,30 +140,6 @@ private func fetchUserInfo(oauth: OAuth, completion: @escaping (Auth?) -> Void) 
             completion(nil)
         }
     }
-}
-
-func base64Decode(_ input: String) -> String? {
-    guard let data = Data(base64Encoded: input),
-          let decodedString = String(data: data, encoding: .utf8) else { return nil }
-    return decodedString
-}
-
-func decodeTokenThreeTimes(_ token: String) -> String? {
-    var decodedToken = token
-    
-    for _ in 1...3 {
-        if let base64Decoded = base64Decode(decodedToken) {
-            decodedToken = base64Decoded
-        } else {
-            return nil
-        }
-    }
-    
-    return decodedToken
-}
-
-func sliceStringWithKeyVoid(_ input: String, key: String) -> [String] {
-    return input.components(separatedBy: key)
 }
 
 enum LicenceError: Error {
