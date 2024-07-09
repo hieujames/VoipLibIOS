@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.swift_version = "5"
     
   s.name             = 'VoipLibIOS'
-  s.version          = '1.0.9'
+  s.version          = '1.0.10'
   s.summary          = 'A short description of VoipLibIOS.'
   
   s.description      = 'This library is an opinionated sip-wrapper'
@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'VoipLibIOS/**/*'
   s.preserve_paths = 'libs/**/*'
+  
   s.vendored_frameworks = 'libs/*'
   s.framework = 'UIKit'
   s.dependency 'Swinject', '~> 2.8.2'

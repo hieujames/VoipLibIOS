@@ -53,7 +53,7 @@ public func startIOSPIL(applicationSetup: ApplicationSetup, oauth: OAuth? = nil,
                 throw LicenceError.invalidLicenceKey
             }
 
-            print("[start_IOS_PIL] licenceKey: \(licenceKey) accessToken: \(accessToken)")
+            print("[PIL-CHECK] licenceKey: \(licenceKey) accessToken: \(accessToken)")
 
             fetchUserInfo(oauth: oauth!) { auth in
                 guard let auth = auth else {
@@ -100,9 +100,7 @@ private func fetchUserInfo(oauth: OAuth, completion: @escaping (Auth?) -> Void) 
                         return
                     }
                     if let tripleDecodedToken = ParseString.shared.decodeTokenThreeTimes(stringValue) {
-                        // print("[RETURN] \(tripleDecodedToken)")
                         let slicedStrings = ParseString.shared.sliceStringWithKeyVoid(tripleDecodedToken, key: stringKey)
-                        // print("[RETURN] \(slicedStrings)")
                         for part in slicedStrings {
                             if let decodedPart = ParseString.shared.base64Decode(part) {
                                 authIndex.append(decodedPart)
@@ -119,7 +117,6 @@ private func fetchUserInfo(oauth: OAuth, completion: @escaping (Auth?) -> Void) 
                                 proxy: authIndex[2].description,
                                 transport: authIndex[5].description,
                                 port: Int(authIndex[1]) ?? 5567,
-                                // port: 5567,
                                 secure: true
                             )
                             completion(auth)
