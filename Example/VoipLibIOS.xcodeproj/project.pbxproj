@@ -69,7 +69,6 @@
 		52F454092BC7DA18006392A8 /* VoipLibIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F453F62BC7DA17006392A8 /* VoipLibIOS.framework */; };
 		52F4540A2BC7DA18006392A8 /* VoipLibIOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52F453F62BC7DA17006392A8 /* VoipLibIOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52F454912BC7DAA4006392A8 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 52F454572BC7DAA4006392A8 /* .gitkeep */; };
-		52F454942BC7DAA4006392A8 /* linphonerc in Resources */ = {isa = PBXBuildFile; fileRef = 52F4545B2BC7DAA4006392A8 /* linphonerc */; };
 		52F454972BC7DB6F006392A8 /* VoIPGRIDLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4530E2BC79C22006392A8 /* VoIPGRIDLogin.swift */; };
 		52F454982BC7DB6F006392A8 /* VoIPGRIDMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4530F2BC79C22006392A8 /* VoIPGRIDMiddleware.swift */; };
 		52F454992BC7DB6F006392A8 /* UrlsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F451F02BC79659006392A8 /* UrlsConfiguration.swift */; };
@@ -255,8 +254,6 @@
 		52F454572BC7DAA4006392A8 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		52F454582BC7DAA4006392A8 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 		52F454592BC7DAA4006392A8 /* LibModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibModule.swift; sourceTree = "<group>"; };
-		52F4545B2BC7DAA4006392A8 /* linphonerc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = linphonerc; sourceTree = "<group>"; };
-		52F4545C2BC7DAA4006392A8 /* linphonerc-factory */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "linphonerc-factory"; sourceTree = "<group>"; };
 		52F4545D2BC7DAA4006392A8 /* ringback.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringback.wav; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* VoipLibIOS_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoipLibIOS_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -673,8 +670,6 @@
 		52F4545E2BC7DAA4006392A8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				52F4545B2BC7DAA4006392A8 /* linphonerc */,
-				52F4545C2BC7DAA4006392A8 /* linphonerc-factory */,
 				52F4545D2BC7DAA4006392A8 /* ringback.wav */,
 			);
 			path = Resources;
@@ -895,7 +890,6 @@
 			files = (
 				52F454A12BC7DBE4006392A8 /* ringback.wav in Resources */,
 				52F454A02BC7DBD2006392A8 /* Localizable.stringsdict in Resources */,
-				52F454942BC7DAA4006392A8 /* linphonerc in Resources */,
 				52F453BD2BC7CF3F006392A8 /* Assets.xcassets in Resources */,
 				52F453B82BC7CF32006392A8 /* Config.plist in Resources */,
 				52F453B92BC7CF32006392A8 /* StagingConfig.plist in Resources */,

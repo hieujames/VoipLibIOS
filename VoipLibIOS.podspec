@@ -24,7 +24,6 @@ Pod::Spec.new do |s|
 
   s.source_files = 'VoipLibIOS/**/*'
   s.preserve_paths = 'libs/**/*'
-  
   s.vendored_frameworks = 'libs/*'
   s.framework = 'UIKit'
   s.dependency 'Swinject', '~> 2.8.2'

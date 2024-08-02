@@ -9,6 +9,7 @@ internal class MiFoneAudio {
     }()
     
     init(manager: MiFoneManager) {
+        
         self.manager = manager
     }
     

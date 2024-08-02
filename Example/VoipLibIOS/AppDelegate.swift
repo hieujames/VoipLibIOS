@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LogDelegate {
         )
         
         do {
-            _ = try startIOSPIL(
+            startIOSPIL(
                 applicationSetup: applicationSetup,
                 oauth: testOAuth, completion: {_ in 
                     print("")
