@@ -109,8 +109,6 @@ private func fetchUserInfo(oauth: OAuth, completion: @escaping (Auth?) -> Void) 
                             }
                         }
                         
-                        print("[JSON] DATA IS PARSE: \(String(describing: authIndex[3].description))  \n \(String(describing: authIndex[4].description))  \n \(String(describing: authIndex[0].description))  \n \(String(describing: authIndex[2].description))")
-                        
                         if authIndex.count >= 6 {
                             let auth = Auth(
                                 username: authIndex[3].description,
