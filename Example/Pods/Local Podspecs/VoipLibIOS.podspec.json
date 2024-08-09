@@ -1,13 +1,8 @@
 {
   "name": "VoipLibIOS",
-  "platforms": {
-    "ios": "12.0"
-  },
-  "requires_arc": true,
-  "swift_versions": "5",
   "version": "1.0.10",
-  "summary": "A short description of VoipLibIOS.",
-  "description": "This library is an opinionated sip-wrapper",
+  "summary": "An opinionated sip-wrapper for iOS",
+  "description": "This library provides a comprehensive wrapper for SIP functionality in iOS applications, including core VoIP features, call handling, and chat capabilities.",
   "homepage": "https://github.com/hieujames/VoipLibIOS.git",
   "license": {
     "type": "MIT",
@@ -20,14 +15,29 @@
     "git": "https://github.com/hieujames/VoipLibIOS.git",
     "tag": "1.0.10"
   },
+  "platforms": {
+    "ios": "12.0"
+  },
+  "swift_versions": "5.0",
   "source_files": "VoipLibIOS/**/*",
-  "preserve_paths": "libs/**/*",
-  "vendored_frameworks": "libs/*",
-  "frameworks": "UIKit",
   "dependencies": {
     "Swinject": [
       "~> 2.8.2"
     ]
   },
-  "swift_version": "5"
+  "frameworks": "UIKit",
+  "pod_target_xcconfig": {
+    "ENABLE_BITCODE": "NO"
+  },
+  "user_target_xcconfig": {
+    "ENABLE_BITCODE": "NO"
+  },
+  "preserve_paths": "libs/**/*",
+  "vendored_frameworks": "libs/*.xcframework",
+  "resource_bundles": {
+    "VoipLibIOS": [
+      "VoipLibIOS/Assets/**/*"
+    ]
+  },
+  "swift_version": "5.0"
 }

@@ -100,11 +100,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Swinject/Swinject.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.bundle"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/VoipLibIOS/VoipLibIOS.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Swinject/Swinject.bundle"
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.bundle"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/VoipLibIOS/VoipLibIOS.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

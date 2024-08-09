@@ -53,8 +53,6 @@ public func startIOSPIL(applicationSetup: ApplicationSetup, oauth: OAuth? = nil,
                 throw LicenceError.invalidLicenceKey
             }
 
-            print("[PIL-CHECK] licenceKey: \(licenceKey) accessToken: \(accessToken)")
-
             fetchUserInfo(oauth: oauth!) { auth in
                 guard let auth = auth else {
                     completion(.failure(LicenceError.invalidCredentials))
@@ -93,7 +91,6 @@ private func fetchUserInfo(oauth: OAuth, completion: @escaping (Auth?) -> Void) 
         case .success(let data):
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    print("[JSON] \(String(describing: json["data"]))")
                     guard let stringValue = json["data"] as? String,
                           let stringKey = json["secret"] as? String else {
                         completion(nil)
