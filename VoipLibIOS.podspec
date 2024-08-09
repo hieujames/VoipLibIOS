@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'VoipLibIOS'
-  s.version          = '1.0.11'
+  s.version          = '1.0.12'
   s.summary          = 'An opinionated sip-wrapper for iOS'
   s.description      = 'This library provides a comprehensive wrapper for SIP functionality in iOS applications, including core VoIP features, call handling, and chat capabilities.'
   s.homepage         = 'https://github.com/hieujames/VoipLibIOS.git'
