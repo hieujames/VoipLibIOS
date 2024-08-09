@@ -31,7 +31,4 @@ Pod::Spec.new do |s|
   s.preserve_paths = 'libs/**/*'
   s.vendored_frameworks = 'libs/*.xcframework'
   
-  s.resource_bundles = {
-    'VoipLibIOS' => ['VoipLibIOS/Assets/**/*']
-  }
 end
