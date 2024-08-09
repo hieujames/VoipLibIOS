@@ -23,7 +23,9 @@ Pod::Spec.new do |s|
   
   s.dependency 'Swinject', '~> 2.8.2'
 
-  s.frameworks = 'UIKit'
+  s.source_files = 'VoipLibIOS/**/*.{h,m,swift}'
+  s.vendored_frameworks = 'Frameworks/*.xcframework'
+  s.private_header_files = 'Frameworks/**/*.h'
   
   s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
   s.user_target_xcconfig = { 'ENABLE_BITCODE' => 'NO' }
