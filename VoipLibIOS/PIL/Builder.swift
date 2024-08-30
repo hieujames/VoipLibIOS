@@ -49,7 +49,7 @@ public func startIOSPIL(applicationSetup: ApplicationSetup, oauth: OAuth? = nil,
                 throw LicenceError.invalidCredentials
             }
 
-            guard licenceKey == "trial" else {
+            guard isValidMD5(licenceKey) else {
                 throw LicenceError.invalidLicenceKey
             }
 
@@ -86,10 +86,11 @@ private func fetchUserInfo(oauth: OAuth, completion: @escaping (Auth?) -> Void) 
     var authIndex: [String] = []
     
     let params = ["mi_token": oauth.accessToken]
-    HttpClient.shared.postRequest(urlString: "https://api-prod.mipbx.vn/api/v1/mifone/sdk/authen", params: params as [String : Any]) { result in
+    HttpClient.shared.postRequest(urlString: "https://api-prod-v1.mipbx.vn/api/v1/webrtc/authenticate", params: params as [String : Any]) { result in
         switch result {
         case .success(let data):
             do {
+                let key_value = "###"
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     guard let stringValue = json["data"] as? String,
                           let stringKey = json["secret"] as? String else {
@@ -99,22 +100,17 @@ private func fetchUserInfo(oauth: OAuth, completion: @escaping (Auth?) -> Void) 
                     if let tripleDecodedToken = ParseString.shared.decodeTokenThreeTimes(stringValue) {
                         let slicedStrings = ParseString.shared.sliceStringWithKeyVoid(tripleDecodedToken, key: stringKey)
                         for part in slicedStrings {
-                            if let decodedPart = ParseString.shared.base64Decode(part) {
-                                authIndex.append(decodedPart)
-                            } else {
-                                print("[ERROR] \(part)")
-                            }
+                            authIndex.append(decodedPart)
                         }
                         
                         if authIndex.count >= 6 {
                             let auth = Auth(
-                                username: authIndex[3].description,
-                                password: authIndex[4].description,
-                                domain: authIndex[0].description,
-                                proxy: authIndex[2].description,
-                                transport: authIndex[5].description,
-                                // port: Int(authIndex[1]) ?? 5567,
-                                port: 5567,
+                                username: authIndex0.description,
+                                password: ParseString.shared.decodeTokenTowTimes(authIndex[1].description),
+                                domain: authIndex[2].description,
+                                proxy: authIndex[3].description,
+                                transport: "TLS",
+                                port: Int(authIndex[5]) ?? 5567,
                                 secure: true
                             )
                             completion(auth)

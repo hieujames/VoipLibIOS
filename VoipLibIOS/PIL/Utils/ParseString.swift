@@ -78,6 +78,20 @@ public class ParseString {
         return decodedToken
     }
     
+    func decodeTokenTowTimes(_ token: String) -> String? {
+        var decodedToken = token
+        
+        for _ in 1...2 {
+            if let base64Decoded = base64Decode(decodedToken) {
+                decodedToken = base64Decoded
+            } else {
+                return nil
+            }
+        }
+        
+        return decodedToken
+    }
+    
     public func loadConfig() -> [String: Any]? {
         guard let url = Bundle.main.url(forResource: "Config", withExtension: "json"),
               let data = try? Data(contentsOf: url) else {
@@ -91,6 +105,12 @@ public class ParseString {
             print("Error loading config: \(error.localizedDescription)")
             return nil
         }
+    }
+    
+    func isValidMD5(_ string: String) -> Bool {
+        let md5Regex = "^[a-fA-F0-9]{32}$"
+        let md5Test = NSPredicate(format: "SELF MATCHES %@", md5Regex)
+        return md5Test.evaluate(with: string)
     }
 
 }
